@@ -10,7 +10,8 @@ export default function Footer() {
             <Link href="/" className="block" aria-label="Home page">
               #
             </Link><p
-            className="text-sm leading-6 text-gray-300">Community-Driven server framework designed with simplicity and usability in mind.</p>
+            className="text-sm leading-6 text-gray-300">Community-Driven server framework designed with simplicity and
+            usability in mind.</p>
             <div className="flex space-x-6"><a className="text-xl text-gray-500 hover:text-gray-400"
                                                href="https://discord.gg/aXYfyNxYVn"><span
               className="sr-only">Discord</span>
@@ -82,7 +83,8 @@ export default function Footer() {
               <div className="text-sm font-semibold leading-6 text-gray-400">Legal</div>
               <ul role="list" className="mt-3 space-y-2">
                 <li><a className="text-sm leading-4 text-gray-300 hover:text-gray-400" href="/terms">Terms</a></li>
-                <li><a className="text-sm leading-4 text-gray-300 hover:text-gray-400" href="/privacy">Privacy Policy</a>
+                <li><a className="text-sm leading-4 text-gray-300 hover:text-gray-400" href="/privacy">Privacy
+                  Policy</a>
                 </li>
                 <li><a className="text-sm leading-4 text-gray-300 hover:text-gray-400" href="/acceptable-use">Acceptable
                   Use</a></li>

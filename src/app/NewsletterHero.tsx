@@ -1,5 +1,5 @@
-import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {CalendarDaysIcon, HandRaisedIcon} from '@heroicons/react/24/outline'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faDiscord, faTwitter} from '@fortawesome/free-brands-svg-icons';
 import Link from "next/link";
 import React from "react";
@@ -14,7 +14,8 @@ export default function NewsletterHero() {
           <div className="max-w-xl lg:max-w-lg">
             <H2>Subscribe to our blog.</H2>
             <p className="mt-4 text-lg leading-8 text-gray-300">
-              When we release a new update or have something to share with everyone we make a post on our blog you can subscribe to our blog or join our discord below to always be informed.
+              When we release a new update or have something to share with everyone we make a post on our blog you can
+              subscribe to our blog or join our discord below to always be informed.
             </p>
             <div className="mt-6 flex max-w-md gap-x-4">
               <label htmlFor="email-address" className="sr-only">
@@ -41,7 +42,7 @@ export default function NewsletterHero() {
                 href="https://discord.gg/Xy4ytrNUkx"
                 className="transition-all duration-200 mx-auto rounded-md bg-[#5865F2] flex text-white px-3.5 py-2.5 pt-1.5 text-sm font-semibold shadow-sm hover:bg-[#5865F2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5865F2]"
               >
-                <FontAwesomeIcon className="h-8 w-8 mr-1 pr-2" icon={faDiscord} />
+                <FontAwesomeIcon className="h-8 w-8 mr-1 pr-2" icon={faDiscord}/>
                 <H4 className="mt-1">Discord</H4>
               </Link>
 
@@ -50,7 +51,7 @@ export default function NewsletterHero() {
                 href="https://discord.gg/Xy4ytrNUkx"
                 className="transition-all duration-200 mx-auto rounded-md bg-blue-400 flex text-white px-3.5 py-2.5 pt-1.5 text-sm font-semibold shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bluee-500"
               >
-                <FontAwesomeIcon className="h-8 w-8 mr-1 pr-2" icon={faTwitter} />
+                <FontAwesomeIcon className="h-8 w-8 mr-1 pr-2" icon={faTwitter}/>
                 <H4 className="mt-1">Twitter</H4>
               </Link>
             </div>
@@ -58,7 +59,7 @@ export default function NewsletterHero() {
           <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
             <div className="flex flex-col items-start">
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
-                <CalendarDaysIcon className="h-6 w-6 text-gray-800" aria-hidden="true" />
+                <CalendarDaysIcon className="h-6 w-6 text-gray-800" aria-hidden="true"/>
               </div>
               <dt className="mt-4 font-semibold text-gray-800">Weekly articles</dt>
               <dd className="mt-2 leading-7 text-gray-400">
@@ -67,7 +68,7 @@ export default function NewsletterHero() {
             </div>
             <div className="flex flex-col items-start">
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
-                <HandRaisedIcon className="h-6 w-6 text-gray-800" aria-hidden="true" />
+                <HandRaisedIcon className="h-6 w-6 text-gray-800" aria-hidden="true"/>
               </div>
               <dt className="mt-4 font-semibold text-gray-800">No spam</dt>
               <dd className="mt-2 leading-7 text-gray-400">

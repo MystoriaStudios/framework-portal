@@ -55,7 +55,7 @@ export function Navbar() {
       )}
     >
       <div className="mr-6 flex lg:hidden space-x-2">
-        <MobileNavigation />
+        <MobileNavigation/>
         <div className={cn('block lg:hidden', 'relative ')}>
           <Link href="/" className="block" aria-label="Home page">
             #
@@ -83,12 +83,12 @@ export function Navbar() {
             Marketplace
           </NavLink>
           <Suspense fallback={<div> Loading ... </div>}>
-            <DynamicAuthNavLink />
+            <DynamicAuthNavLink/>
           </Suspense>
 
           <div className="ml-auto">
             <Suspense fallback={<div> Loading ... </div>}>
-              <DynamicNavHero />
+              <DynamicNavHero/>
             </Suspense>
           </div>
         </div>

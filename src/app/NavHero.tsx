@@ -25,7 +25,7 @@ export function NavHero() {
         {user.user_metadata.full_name}
           <img className="h-6 w-6 rounded-lg ml-2" src={user.user_metadata.avatar_url}/>
       </span>
-        ) : (
+      ) : (
         <>
           <NavLink href="/login">Login</NavLink>
           <NavLink href="/register">Register</NavLink>

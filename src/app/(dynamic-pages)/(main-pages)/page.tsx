@@ -31,13 +31,14 @@ export default async function HomePage() {
         <BlogHero items={initialItems}/>
       </div>
 
-      <NewsletterHero />
+      <NewsletterHero/>
       <div className="bg-white py-4 sm:py-8">
         <div className="mx-auto max-w-7xl px-2">
           <H3 className="text-center">
             Built using a range of languages and services
           </H3>
-          <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+          <div
+            className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
             <img
               className="dark:hidden col-span-2 max-h-12 w-full object-contain lg:col-span-1 p-2"
               src="/assets/kotlin_black.svg"
@@ -146,6 +147,6 @@ export default async function HomePage() {
           </div>
         </div>
       </div>
-      </>
+    </>
   );
 }
