@@ -1,6 +1,10 @@
 'use client';
 
 import {useEffect} from 'react'
+import {H1} from "@/components/ui/Typography/H1";
+import {H2} from "@/components/ui/Typography/H2";
+import {faHome} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export default function NotFound({
                                    error,
@@ -17,16 +21,15 @@ export default function NotFound({
   return (
     <div className="grid min-h-full place-items-center px-6 py-24 sm:py-32 lg:px-8">
       <div className="text-center">
-        <p className="text-base font-semibold text-rose-800">404</p>
-        <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">That wasn't supposed to
-          happen</h1>
+        <H1 className="text-base font-semibold text-rose-800">404</H1>
+        <H2>That wasn't supposed to happen</H2>
         <p className="mt-6 text-base leading-7 text-gray-600">Sorry, we couldn’t find the page you’re looking for.</p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <a
             href="/"
             className="transition duration-300 rounded-md bg-rose-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-rose-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600"
           >
-            Go back home
+            Go back <FontAwesomeIcon icon={faHome}></FontAwesomeIcon>
           </a>
           <a href="#" className="text-sm font-semibold text-gray-900">
             Contact support <span aria-hidden="true">&rarr;</span>

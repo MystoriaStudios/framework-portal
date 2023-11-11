@@ -65,10 +65,10 @@ export function Navbar() {
         </div>
       </div>
 
-      <div className={cn(' mx-auto w-full max-w-8xl flex justify-center ')}>
+      <div className={cn(' mx-auto w-full flex justify-center ')}>
         <div
           className={cn(
-            'hidden lg:flex items-center gap-8 mx-auto ',
+            'hidden lg:flex items-center gap-8 mx-auto w-screen',
             'relative '
           )}
         >
@@ -88,7 +88,7 @@ export function Navbar() {
             <DynamicAuthNavLink/>
           </Suspense>
 
-          <div className="ml-auto">
+          <div className="ml-auto w-full">
             <Suspense fallback={<div> Loading ... </div>}>
               <DynamicNavHero/>
             </Suspense>
