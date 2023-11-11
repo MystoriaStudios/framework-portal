@@ -1,4 +1,4 @@
-import {NodeDetails} from "@/app/(dynamic-pages)/(main-pages)/(logged-in-pages)/dashboard/nodes/details";
+import {NodeDetails} from "@/app/(dynamic-pages)/(main-pages)/(logged-in-pages)/dashboard/[organization]/nodes/details";
 
 export const dynamic = 'force-dynamic';
 
