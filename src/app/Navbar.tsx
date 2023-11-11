@@ -6,6 +6,7 @@ import {MobileNavigation} from './MobileNavigation';
 import {NavLink} from './NavLink';
 // next dynamic
 import dynamic from 'next/dynamic';
+import {usePathname} from "next/navigation";
 
 const DynamicAuthNavLink = dynamic(
   () => import('./AuthNavLink').then((module) => module.AuthNavLink),
@@ -22,6 +23,7 @@ const DynamicNavHero = dynamic(
 );
 
 export function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
 
   const [time, setTime] = useState(new Date());
@@ -97,7 +99,7 @@ export function Navbar() {
       </div>
 
       <div>
-        {window.location.href.replace("http://localhost:3000/", "")}
+        {pathname}
       </div>
     </header>
   );
