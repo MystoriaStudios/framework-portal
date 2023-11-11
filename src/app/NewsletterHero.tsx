@@ -1,9 +1,5 @@
 import {CalendarDaysIcon, HandRaisedIcon} from '@heroicons/react/24/outline'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faDiscord, faTwitter} from '@fortawesome/free-brands-svg-icons';
-import Link from "next/link";
 import React from "react";
-import {H4} from "@/components/ui/Typography/H4";
 import {H2} from "@/components/ui/Typography/H2";
 
 export default function NewsletterHero() {

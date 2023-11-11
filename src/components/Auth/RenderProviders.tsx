@@ -46,7 +46,8 @@ export const RenderProviders = ({
                 <HoverCardTrigger asChild>
                   <div className="w-full [&>button]:w-full">{component}</div>
                 </HoverCardTrigger>
-                <HoverCardContent className="w-80 dark:bg-black bg-white border border-neutral-300 dark:border-neutral-700">
+                <HoverCardContent
+                  className="w-80 dark:bg-black bg-white border border-neutral-300 dark:border-neutral-700">
                   <T.Small className="text-muted-foreground">
                     ⚠️ As this is a demo, the social media authentication
                     buttons aren't linked. However, you can connect them in your

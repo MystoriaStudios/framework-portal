@@ -1,7 +1,5 @@
 import Link from "next/link";
 import {PieChart} from "@/components/ui/Chart";
-import {H1} from "@/components/ui/Typography/H1";
-import {H3} from "@/components/ui/Typography/H3";
 import {H2} from "@/components/ui/Typography/H2";
 
 export default function Dashboard() {

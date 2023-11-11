@@ -11,7 +11,8 @@ export const BlogHero = ({items}: { items: Table<'items'>[] }) => {
         <div className={'grid lg:grid-cols-2 xl:grid-cols-3 grid-span-row gap-4'}>
           {items.map((item) => (
             <article key={item.id} className="flex max-w-xl flex-col items-start justify-between shadow rounded-lg">
-              <img width={512} className="mx-auto rounded-t-lg" src={"https://media.istockphoto.com/id/1413837275/photo/abstract-it-design-background-with-a-tilted-triangular-grid-surface-and-python-computer.webp?b=1&s=170667a&w=0&k=20&c=niNjthAGYXZ9zF8a5d9klfKftbd4Ih_F0jWKP4N3DNM="} />
+              <img width={512} className="mx-auto rounded-t-lg"
+                   src={"https://media.istockphoto.com/id/1413837275/photo/abstract-it-design-background-with-a-tilted-triangular-grid-surface-and-python-computer.webp?b=1&s=170667a&w=0&k=20&c=niNjthAGYXZ9zF8a5d9klfKftbd4Ih_F0jWKP4N3DNM="}/>
 
               <div className="flex items-center gap-x-4 text-xs p-4">
                 <time dateTime={item.created_at} className="text-neutral-500">

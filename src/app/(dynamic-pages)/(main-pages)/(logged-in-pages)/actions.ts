@@ -15,6 +15,7 @@ export async function insertOrganizationAction(payload: {
   // @ts-ignore
   return data.id;
 }
+
 export async function getOrganizationAction(id: string) {
   const supabaseClient = createSupabaseServerActionClient();
   return await getOrganization(supabaseClient, id);

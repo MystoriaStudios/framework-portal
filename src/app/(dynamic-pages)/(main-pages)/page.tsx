@@ -33,7 +33,7 @@ export default async function HomePage() {
       </div>
 
       <NewsletterHero/>
-      <Faq />
+      <Faq/>
       <div className="py-4 sm:py-8">
         <div className="mx-auto max-w-7xl px-2">
           <H3 className="text-center">

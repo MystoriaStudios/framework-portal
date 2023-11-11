@@ -34,7 +34,7 @@ export function NavHero() {
         </>)
       }
 
-      <NavTheme />
+      <NavTheme/>
     </div>
   );
 }

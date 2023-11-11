@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMoon, faSun} from "@fortawesome/free-solid-svg-icons";
 
@@ -36,7 +36,7 @@ const NavTheme = () => {
   return (
     <div>
       <button onClick={toggleTheme}>
-        <FontAwesomeIcon icon={isDarkMode ? faMoon : faSun }></FontAwesomeIcon>
+        <FontAwesomeIcon icon={isDarkMode ? faMoon : faSun}></FontAwesomeIcon>
       </button>
     </div>
   );
