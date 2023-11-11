@@ -32,7 +32,7 @@ export default async function RootLayout({
     <head/>
     <body>
     <Banner/>
-    <div className="space-y-4 dark:bg-neutral-800 h-screen">
+    <div className="space-y-4 dark:bg-neutral-800 min-h-screen">
       <Navbar/>
       <ClientLayout>{children}</ClientLayout>
     </div>
