@@ -53,6 +53,22 @@ export const deleteItem = async (supabase: AppSupabaseClient, id: string) => {
   return true;
 };
 
+export const getItem = async (
+  supabase: AppSupabaseClient,
+  id: string
+): Promise<Table<'items'>> => {
+  const {data, error} = await supabase
+    .from('items')
+    .select('*')
+    .eq('id', id)
+    .single();
+
+  if (error) {
+    throw error;
+  }
+
+  return data;
+};
 
 export const insertOrganization = async (
   supabase: AppSupabaseClient,
@@ -93,24 +109,6 @@ export const deleteOrganization = async (supabase: AppSupabaseClient, id: string
 
   return true;
 };
-
-export const getItem = async (
-  supabase: AppSupabaseClient,
-  id: string
-): Promise<Table<'organizations'>> => {
-  const {data, error} = await supabase
-    .from('organizations')
-    .select('*')
-    .eq('id', id)
-    .single();
-
-  if (error) {
-    throw error;
-  }
-
-  return data;
-};
-
 export const getOrganization = async (
   supabase: AppSupabaseClient,
   id: string
