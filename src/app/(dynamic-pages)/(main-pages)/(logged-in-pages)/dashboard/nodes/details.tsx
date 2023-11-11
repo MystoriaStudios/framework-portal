@@ -24,7 +24,7 @@ export function NodeDetails() {
   const route = `http://65.108.1.20:7777/api/nodes/org_2XQOxNamtty4AnwFGyepkxOdq7F`
   console.log(route)
 
-  const {data, error, isValidating} = useSWR(route, fetcher, {
+  const {data, isValidating} = useSWR(route, fetcher, {
     revalidateIfStale: true,
     revalidateOnFocus: true,
     refreshInterval: 30000
@@ -34,7 +34,7 @@ export function NodeDetails() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(new Date());
+      setTime(time || new Date());
     }, 1500);
 
     return () => clearInterval(interval);
@@ -42,7 +42,7 @@ export function NodeDetails() {
   return (
     <div>
       <div className="mt-12 transition-all delay-300 transition">
-        {data && data.length > 0 ? (
+        {!isValidating && data && data.length > 0 ? (
           <div className="w-1/2 mx-auto">
             <H1>
               Nodes
