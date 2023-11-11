@@ -1,15 +1,11 @@
 'use client';
-import { RenderProviders } from '@/components/Auth/RenderProviders';
-import { Email } from '@/components/Auth/Email';
-import { EmailAndPassword } from '@/components/Auth/EmailAndPassword';
-import {
-  useSignInWithMagicLink,
-  useSignInWithPassword,
-  useSignInWithProvider,
-} from '@/utils/react-query-hooks';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { T } from '@/components/ui/Typography';
+import {RenderProviders} from '@/components/Auth/RenderProviders';
+import {Email} from '@/components/Auth/Email';
+import {EmailAndPassword} from '@/components/Auth/EmailAndPassword';
+import {useSignInWithMagicLink, useSignInWithPassword, useSignInWithProvider,} from '@/utils/react-query-hooks';
+import {useState} from 'react';
+import {useRouter} from 'next/navigation';
+import {T} from '@/components/ui/Typography';
 
 export function Login() {
   const router = useRouter();
@@ -18,6 +14,7 @@ export function Login() {
     router.refresh();
     router.push('/auth/callback');
   }
+
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const magicLinkMutation = useSignInWithMagicLink({
     onSuccess: () => {
@@ -39,7 +36,7 @@ export function Login() {
           </T.P>
         </div>
         <RenderProviders
-          providers={['google', 'github', 'twitter']}
+          providers={['google', 'github', 'discord']}
           isLoading={providerMutation.isLoading}
           onProviderLoginRequested={(provider) => {
             providerMutation.mutate({
@@ -47,7 +44,7 @@ export function Login() {
             });
           }}
         />
-        <hr />
+        <hr/>
         <Email
           onSubmit={(email) => {
             magicLinkMutation.mutate({
@@ -58,7 +55,7 @@ export function Login() {
           isLoading={magicLinkMutation.isLoading}
           view="sign-in"
         />
-        <hr />
+        <hr/>
         <EmailAndPassword
           isLoading={passwordMutation.isLoading}
           onSubmit={(data) => {

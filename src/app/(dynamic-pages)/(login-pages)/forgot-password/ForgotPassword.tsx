@@ -1,8 +1,8 @@
 'use client';
-import { Email } from '@/components/Auth/Email';
-import { T } from '@/components/ui/Typography';
-import { useResetPassword } from '@/utils/react-query-hooks';
-import { useState } from 'react';
+import {Email} from '@/components/Auth/Email';
+import {T} from '@/components/ui/Typography';
+import {useResetPassword} from '@/utils/react-query-hooks';
+import {useState} from 'react';
 
 export function ForgotPassword() {
   const [successMessage, setSuccessMessage] = useState<string | null>(null);

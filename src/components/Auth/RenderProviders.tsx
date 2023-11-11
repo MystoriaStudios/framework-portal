@@ -1,25 +1,21 @@
-import { AuthProvider } from '@/types';
+import {AuthProvider} from '@/types';
 import * as SocialIcons from '@/components/Auth/Icons';
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from '@/components/ui/HoverCard';
-import { T } from '@/components/ui/Typography';
-import { Button } from '@/components/ui/button';
+import {HoverCard, HoverCardContent, HoverCardTrigger,} from '@/components/ui/HoverCard';
+import {T} from '@/components/ui/Typography';
+import {Button} from '@/components/ui/button';
 
 function capitalize(word: string) {
   const lower = word.toLowerCase();
   return word.charAt(0).toUpperCase() + lower.slice(1);
 }
 
-const isDemo = true;
+const isDemo = false;
 
 export const RenderProviders = ({
-  providers,
-  onProviderLoginRequested,
-  isLoading,
-}: {
+                                  providers,
+                                  onProviderLoginRequested,
+                                  isLoading,
+                                }: {
   providers: AuthProvider[];
   onProviderLoginRequested: (provider: AuthProvider) => void;
   isLoading: boolean;
@@ -38,7 +34,7 @@ export const RenderProviders = ({
             className="bg-white dark:bg-white text-black dark:text-black border h-10 border-gray-400 dark:border-gray-600 rounded-lg"
           >
             <div className="mr-2">
-              <AuthIcon />
+              <AuthIcon/>
             </div>
             <span className="">{capitalize(provider)}</span>
           </Button>

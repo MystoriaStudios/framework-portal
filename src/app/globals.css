@@ -1,11 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "MonaspaceKrypton";
+  src: url("/fonts/MonaspaceKrypton.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "MonaspaceNeon";
+  src: url("/fonts/MonaspaceNeon.ttf") format("truetype");
+}
+
+.krypton {
+  font-family: MonaspaceKrypton, sans-serif;
+}
+
 html,
 body {
   height: 100%;
   width: 100%;
-  font-family: Monaspace krypton;
+  font-family: MonaspaceNeon, sans-serif;
 }
 
 [data-nextjs-scroll-focus-boundary] {
@@ -144,13 +159,13 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings: 'rlig' 1, 'calt' 1;
 
   }
 }
-
 
 
 @tailwind variants;

@@ -1,9 +1,9 @@
 'use client';
-import { T } from '@/components/ui/Typography';
-import { useSession } from '@supabase/auth-helpers-react';
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
-import { useDidMount } from 'rooks';
+import {T} from '@/components/ui/Typography';
+import {useSession} from '@supabase/auth-helpers-react';
+import {useRouter} from 'next/navigation';
+import {useState} from 'react';
+import {useDidMount} from 'rooks';
 
 export default function HomePage() {
   const session = useSession();

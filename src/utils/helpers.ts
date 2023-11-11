@@ -1,4 +1,4 @@
-import { DEV_PORT } from '@/constants';
+import {DEV_PORT} from '@/constants';
 import urlJoin from 'url-join';
 
 export const getURL = () => {

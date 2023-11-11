@@ -1,7 +1,7 @@
 'use client';
-import { ComponentProps, useState } from 'react';
+import {ComponentProps, useState} from 'react';
 import Link from 'next/link';
-import { Dialog } from '@headlessui/react';
+import {Dialog} from '@headlessui/react';
 
 function MenuIcon(props: ComponentProps<'svg'>) {
   return (
@@ -13,7 +13,7 @@ function MenuIcon(props: ComponentProps<'svg'>) {
       strokeLinecap="round"
       {...props}
     >
-      <path d="M4 7h16M4 12h16M4 17h16" />
+      <path d="M4 7h16M4 12h16M4 17h16"/>
     </svg>
   );
 }
@@ -28,7 +28,7 @@ function CloseIcon(props: ComponentProps<'svg'>) {
       strokeLinecap="round"
       {...props}
     >
-      <path d="M5 5l14 14M19 5l-14 14" />
+      <path d="M5 5l14 14M19 5l-14 14"/>
     </svg>
   );
 }
@@ -60,7 +60,7 @@ export function MobileNavigation() {
         className="relative"
         aria-label="Open navigation"
       >
-        <MenuIcon className="h-6 w-6 stroke-slate-500" />
+        <MenuIcon className="h-6 w-6 stroke-slate-500"/>
       </button>
       <Dialog
         open={isOpen}
@@ -75,7 +75,7 @@ export function MobileNavigation() {
               onClick={() => setIsOpen(false)}
               aria-label="Close navigation"
             >
-              <CloseIcon className="h-6 w-6 stroke-slate-500" />
+              <CloseIcon className="h-6 w-6 stroke-slate-500"/>
             </button>
             <Link href="/" className="block" aria-label="Home page">
               <img

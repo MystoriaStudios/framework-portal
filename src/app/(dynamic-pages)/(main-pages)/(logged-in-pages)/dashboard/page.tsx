@@ -1,12 +1,12 @@
-import { ClientPage } from './ClientPage';
-import { insertPrivateItemAction } from './actions';
+import Link from "next/link";
 
-export const dynamic = 'force-dynamic';
-
-export default function NewItem() {
+export default function Dashboard() {
   return (
-    <div className="max-w-2xl">
-      <ClientPage insertPrivateItemAction={insertPrivateItemAction} />;
-    </div>
+    <>
+      Main ddaahsboard heree shownibg some emeetrics and useeful insights.
+
+
+      <Link href="/dashboard/nodes">click to go to the nodes overview</Link>
+    </>
   );
 }

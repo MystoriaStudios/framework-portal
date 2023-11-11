@@ -1,13 +1,9 @@
 'use client';
-import { RenderProviders } from '@/components/Auth/RenderProviders';
-import { Email } from '@/components/Auth/Email';
-import { EmailAndPassword } from '@/components/Auth/EmailAndPassword';
-import {
-  useSignInWithMagicLink,
-  useSignInWithProvider,
-  useSignUp,
-} from '@/utils/react-query-hooks';
-import { useState } from 'react';
+import {RenderProviders} from '@/components/Auth/RenderProviders';
+import {Email} from '@/components/Auth/Email';
+import {EmailAndPassword} from '@/components/Auth/EmailAndPassword';
+import {useSignInWithMagicLink, useSignInWithProvider, useSignUp,} from '@/utils/react-query-hooks';
+import {useState} from 'react';
 
 export function SignUp() {
   const [isSuccessful, setIsSuccessful] = useState(false);
@@ -15,6 +11,7 @@ export function SignUp() {
   function redirectToDashboard() {
     setIsSuccessful(true);
   }
+
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const magicLinkMutation = useSignInWithMagicLink({
     onSuccess: () => {
@@ -53,7 +50,7 @@ export function SignUp() {
               });
             }}
           />
-          <hr />
+          <hr/>
           <Email
             onSubmit={(email) => {
               magicLinkMutation.mutate({
@@ -64,7 +61,7 @@ export function SignUp() {
             isLoading={magicLinkMutation.isLoading}
             view="sign-up"
           />
-          <hr />
+          <hr/>
           <EmailAndPassword
             isLoading={passwordMutation.isLoading}
             onSubmit={(data) => {

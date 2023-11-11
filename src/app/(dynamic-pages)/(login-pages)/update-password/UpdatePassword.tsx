@@ -1,7 +1,7 @@
 'use client';
-import { Password } from '@/components/Auth/Password';
-import { useUpdatePassword } from '@/utils/react-query-hooks';
-import { useRouter } from 'next/navigation';
+import {Password} from '@/components/Auth/Password';
+import {useUpdatePassword} from '@/utils/react-query-hooks';
+import {useRouter} from 'next/navigation';
 
 export function UpdatePassword() {
   const router = useRouter();
