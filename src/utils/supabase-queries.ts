@@ -53,12 +53,70 @@ export const deleteItem = async (supabase: AppSupabaseClient, id: string) => {
   return true;
 };
 
+
+export const insertOrganization = async (
+  supabase: AppSupabaseClient,
+  item: { name: string }
+): Promise<Table<'organizations'>> => {
+  const {data, error} = await supabase
+    .from('organizations')
+    .insert(item)
+    .select('*')
+    .single();
+
+  if (error) {
+    throw error;
+  }
+
+  return data;
+};
+
+export const updateOrganization = async (
+  supabase: AppSupabaseClient,
+  item: { id: string; name: string }
+) => {
+  const {data, error} = await supabase.from('organizations').update(item).single();
+
+  if (error) {
+    throw error;
+  }
+
+  return data;
+};
+
+export const deleteOrganization = async (supabase: AppSupabaseClient, id: string) => {
+  const {error} = await supabase.from('organizations').delete().match({id});
+
+  if (error) {
+    throw error;
+  }
+
+  return true;
+};
+
 export const getItem = async (
   supabase: AppSupabaseClient,
   id: string
-): Promise<Table<'items'>> => {
+): Promise<Table<'organizations'>> => {
   const {data, error} = await supabase
-    .from('items')
+    .from('organizations')
+    .select('*')
+    .eq('id', id)
+    .single();
+
+  if (error) {
+    throw error;
+  }
+
+  return data;
+};
+
+export const getOrganization = async (
+  supabase: AppSupabaseClient,
+  id: string
+): Promise<Table<'organizations'>> => {
+  const {data, error} = await supabase
+    .from('organizations')
     .select('*')
     .eq('id', id)
     .single();

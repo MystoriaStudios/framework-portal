@@ -1,10 +1,9 @@
-import Link from "next/link";
+import {insertOrganizationAction} from "@/app/(dynamic-pages)/(main-pages)/(logged-in-pages)/actions";
+import {
+  ClientPage
+} from "@/app/(dynamic-pages)/(main-pages)/(logged-in-pages)/dashboard/organization-onboarding/ClientPage";
 
 export default function Dashboard() {
-  return (
-    <>
-      ok start theee proceess sfor building a new orgnaization here fr.
-      <Link href="/dashboard/nodes">click to go to the nodes overview</Link>
-    </>
-  );
+
+  return <ClientPage insertItemAction={insertOrganizationAction}/>;
 }

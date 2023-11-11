@@ -1,6 +1,8 @@
 import {ReactNode} from 'react';
-import {redirect} from 'next/navigation';
+import {redirect, useParams} from 'next/navigation';
 import {createSupabaseServerComponentClient} from '@/supabase-clients/createSupabaseServerComponentClient';
+import OrganizationAuthWrapper
+  from "@/app/(dynamic-pages)/(main-pages)/(logged-in-pages)/dashboard/[organization]/OrganizationAuthWrapper";
 
 export default async function Layout({children}: { children: ReactNode }) {
   const supabaseClient = createSupabaseServerComponentClient();
@@ -16,5 +18,11 @@ export default async function Layout({children}: { children: ReactNode }) {
 
   // WEWE NEEED TO DO SOMEE FORM OF CHEECK HRE O AMEK SSUREE THAT THEE PARARMEETEER IN  THE URL IS LIKE ACCESSIBLEE BY THE LOGGEED IN USSSER IF NOT DETEEER THEM AWAYA FROM IT.
 
-  return <>{children}</>;
+  return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    <OrganizationAuthWrapper id={data.user.id}>
+      {children}
+    </OrganizationAuthWrapper>
+  );
 }
