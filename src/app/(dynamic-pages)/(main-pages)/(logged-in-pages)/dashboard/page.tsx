@@ -10,7 +10,7 @@ import {Input} from "@/components/ui/Input";
 export default function Dashboard() {
   return (
     <div className={"md:w-3/4 mx-auto"}>
-        <div className={"xl:m-20 border-gray-300 rounded-lg border-2 border-dashed"}>
+        <div className={"xl:m-20 border-neutral-300 rounded-lg border-2 border-dashed"}>
           <div className={"2xl:p-8"}>
             <div className={"lg:w-2/4 mx-auto text-center"}>
               <div className={"flex flex-col p-4"}>

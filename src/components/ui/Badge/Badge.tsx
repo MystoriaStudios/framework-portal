@@ -8,7 +8,7 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-slate-50 group-hover:bg-slate-100 border border-slate-700 text-black',
+          'bg-neutral-50 group-hover:bg-neutral-100 border border-neutral-700 text-black',
         success:
           'bg-green-50 group-hover:bg-green-100 border border-green-700 text-green-900',
         information:
@@ -23,7 +23,7 @@ const badgeVariants = cva(
         indigo:
           'bg-indigo-50 group-hover:bg-indigo-100 border border-indigo-700 text-indigo-900',
         outline: 'text-foreground',
-        soliddefault: 'bg-slate-700 text-white group-hover:bg-slate-500',
+        soliddefault: 'bg-neutral-700 text-white group-hover:bg-neutral-500',
         solidSuccess: 'bg-green-700 text-white group-hover:bg-green-500',
         solidInformation: 'bg-blue-700 text-white group-hover:bg-blue-500',
         solidDanger: 'bg-rose-700 text-white group-hover:bg-rose-500',

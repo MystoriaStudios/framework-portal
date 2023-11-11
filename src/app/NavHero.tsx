@@ -5,6 +5,8 @@ import {createSuspenseResource} from '@/utils/createSuspenseResource';
 import {User} from '@supabase/supabase-js';
 
 import {NavLink} from './NavLink';
+import NavTheme from "@/app/NavTheme";
+import React from "react";
 
 // This will only be run on the client side and without SSR.
 // We need to check if a user is logged in and show the appropriate link
@@ -31,6 +33,8 @@ export function NavHero() {
           <NavLink href="/register">Register</NavLink>
         </>)
       }
+
+      <NavTheme />
     </div>
   );
 }

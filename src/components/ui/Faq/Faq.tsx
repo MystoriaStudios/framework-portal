@@ -1,12 +1,14 @@
 "use client"
-import {useState} from "react";
+import React, {useState} from "react";
 import {H1} from "@/components/ui/Typography/H1";
+import {H4} from "@/components/ui/Typography/H4";
+import {P} from "@/components/ui/Typography/P";
 
 const Item = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border rounded shadow-sm">
+    <div className="border border-neutral-900 rounded shadow">
       <button
         type="button"
         aria-label="Open item"
@@ -14,11 +16,11 @@ const Item = ({ title, children }) => {
         className="flex items-center justify-between w-full p-4 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <p className="text-lg font-medium">{title}</p>
+        <H4 className="text-lg font-medium">{title}</H4>
         <div className="flex items-center justify-center w-8 h-8 border rounded-full">
           <svg
             viewBox="0 0 24 24"
-            className={`w-3 text-gray-600 transition-transform duration-200 ${
+            className={`w-3 text-neutral-600 transition-transform duration-200 ${
               isOpen ? 'transform rotate-180' : ''
             }`}
           >
@@ -36,7 +38,7 @@ const Item = ({ title, children }) => {
       </button>
       {isOpen && (
         <div className="p-4 pt-0">
-          <p className="text-gray-700">{children}</p>
+          <P className="text-neutral-700">{children}</P>
         </div>
       )}
     </div>
@@ -49,12 +51,12 @@ export const Faq = () => {
       <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
         <div className="flex flex-col mb-16 sm:text-center">
           <div className="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl">
-            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-neutral-900 sm:text-4xl md:mx-auto">
               <span className="relative inline-block">
                 <svg
                   viewBox="0 0 52 24"
                   fill="currentColor"
-                  className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+                  className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-neutral-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
                 >
                   <defs>
                     <pattern
@@ -78,9 +80,9 @@ export const Faq = () => {
                 </H1>
               </span>
             </h2>
-            <p className="text-base text-gray-700 md:text-lg">
+            <P>
               This section is for frequently asked questions about our services.
-            </p>
+            </P>
           </div>
         </div>
         <div className="space-y-4">

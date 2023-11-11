@@ -1,7 +1,7 @@
 'use client'
 import {cn} from '@/utils/cn'
 import Link from 'next/link';
-import {Suspense, useEffect, useState} from 'react';
+import React, {Suspense, useEffect, useState} from 'react';
 import {MobileNavigation} from './MobileNavigation';
 import {NavLink} from './NavLink';
 // next dynamic
@@ -50,10 +50,10 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'transition transition-all duration-400 sticky top-0 z-50 flex flex-wrap items-center justify-between bg-transparent px-1 py-2 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-3 lg:px-4',
+        'transition transition-all duration-400 sticky top-0 z-50 flex flex-wrap items-center justify-between bg-transparent px-1 py-2 shadow-md shadow-neutral-900/5 transition duration-500 dark:shadow-none sm:px-3 lg:px-4',
         isScrolled
-          ? 'dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75'
-          : 'dark:bg-transparent'
+          ? ' dark:bg-neutral-900/95 backdrop-blur [@supports(backdrop-filter:blur(0))]:bg-neutral-900/75 [@supports(backdrop-filter:blur(0))]:bg-white/75'
+          : 'bg-transparent'
       )}
     >
       <div className="mr-6 flex lg:hidden space-x-2">
@@ -89,9 +89,11 @@ export function Navbar() {
           </Suspense>
 
           <div className="ml-auto w-full">
-            <Suspense fallback={<div> Loading ... </div>}>
-              <DynamicNavHero/>
-            </Suspense>
+            <div className={""}>
+              <Suspense fallback={<div> Loading ... </div>}>
+                <DynamicNavHero/>
+              </Suspense>
+            </div>
           </div>
         </div>
         <div className="-my-5 mr-6 sm:mr-8 md:mr-0"></div>

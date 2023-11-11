@@ -11,7 +11,7 @@ export function ClientLayout({children}: { children: ReactNode }) {
     router.prefetch('/dashboard');
   }, []);
   return (
-    <div className=" h-full dark:bg-gray-900/20">
+    <div className=" h-full dark:bg-neutral-900/20">
       <div
         className="grid"
         style={{
@@ -26,7 +26,7 @@ export function ClientLayout({children}: { children: ReactNode }) {
 
           {/* Blue Background Image */}
           <div
-            className="gap-10 bg-cover flex flex-col justify-between rounded-xl w-full dark:bg-gray-800 bg-gray-100 bg-opacity-90 h-full px-10 pt-10 pb-10"
+            className="gap-10 bg-cover flex flex-col justify-between rounded-xl w-full dark:bg-neutral-800 bg-neutral-100 bg-opacity-90 h-full px-10 pt-10 pb-10"
             // style={{ backgroundImage: `url(${LoginBackgroundLight.src})` }}
           >
             <div className="ml-6 space-y-8">
@@ -48,7 +48,7 @@ export function ClientLayout({children}: { children: ReactNode }) {
                 </T.H3>
                 <div className="mt-8 flex justify-between">
                   <T.P>⭐️ ⭐️ ⭐️ ⭐️ ⭐️</T.P>
-                  <T.P className="dark:text-gray-100 text-base font-[500]">
+                  <T.P className="dark:text-neutral-100 text-base font-[500]">
                     Jonathan Smith - CEO of Company
                   </T.P>
                 </div>

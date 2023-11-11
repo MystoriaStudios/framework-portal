@@ -56,13 +56,13 @@ export const ClientPage = ({
       }}
     >
       <div>
-        <h1 className="mt-1 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+        <h1 className="mt-1 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">
           Create Item
         </h1>
       </div>
       <div className="space-y-2">
         <label
-          className="block text-sm font-medium text-gray-700"
+          className="block text-sm font-medium text-neutral-700"
           htmlFor="name"
         >
           Name
@@ -75,12 +75,12 @@ export const ClientPage = ({
           id="name"
           name="name"
           type="text"
-          className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+          className="block w-full appearance-none rounded-md border border-neutral-300 px-3 py-2 placeholder-neutral-400 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
         />
       </div>
       <div className="space-y-2">
         <label
-          className="block text-sm font-medium text-gray-700"
+          className="block text-sm font-medium text-neutral-700"
           htmlFor="description"
         >
           Description
@@ -93,7 +93,7 @@ export const ClientPage = ({
           id="description"
           name="description"
           rows={4}
-          className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
+          className="block w-full appearance-none rounded-md border border-neutral-300 px-3 py-2 placeholder-neutral-400 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
         />
       </div>
       <Button variant="default" type="submit">

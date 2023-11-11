@@ -5,6 +5,7 @@ import {H1} from "@/components/ui/Typography/H1";
 import {H2} from "@/components/ui/Typography/H2";
 import {faHome} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {P} from "@/components/ui/Typography/P";
 
 export default function NotFound({
                                    error,
@@ -21,9 +22,9 @@ export default function NotFound({
   return (
     <div className="grid min-h-full place-items-center px-6 py-24 sm:py-32 lg:px-8">
       <div className="text-center">
-        <H1 className="text-base font-semibold text-rose-800">404</H1>
+        <H1 className="font-semibold text-rose-800 dark:text-rose-800">404</H1>
         <H2>That wasn't supposed to happen</H2>
-        <p className="mt-6 text-base leading-7 text-gray-600">Sorry, we couldn’t find the page you’re looking for.</p>
+        <P>Sorry, we couldn’t find the page you’re looking for.</P>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <a
             href="/"
@@ -31,7 +32,7 @@ export default function NotFound({
           >
             Go back <FontAwesomeIcon icon={faHome}></FontAwesomeIcon>
           </a>
-          <a href="#" className="text-sm font-semibold text-gray-900">
+          <a href="#" className="text-sm font-semibold">
             Contact support <span aria-hidden="true">&rarr;</span>
           </a>
         </div>

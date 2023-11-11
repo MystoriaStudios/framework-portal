@@ -47,7 +47,7 @@ export function NodeDetails() {
               Nodes
             </H1>
             <ul role="list"
-                className="text-gray-900 divide-y divide-gray-200 bg-white shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+                className="text-neutral-900 divide-y divide-neutral-200 bg-white shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
               {
                 data.sort((first: any, second: any) => {
                   return (first.state == "SETUP" ? -10 : first.state == "OFFLINE" ? 199 : 0) - (second.state == "SETUP" ? -10 : second.state == "OFFLINE" ? 199 : 0)
@@ -130,7 +130,7 @@ export function NodeDetails() {
             </ul>
           </div>
         ) : (
-          <div className="text-gray-50 px-8 pb-5 text-2xl text-center transition-all delay-300">
+          <div className="text-neutral-50 px-8 pb-5 text-2xl text-center transition-all delay-300">
             There are no nodes found on this organization you can follow our node setup guide <Link
             className="text-amber-400" href={"/"}>here</Link>
           </div>

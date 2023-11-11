@@ -34,7 +34,7 @@ export default async function HomePage() {
 
       <NewsletterHero/>
       <Faq />
-      <div className="bg-white py-4 sm:py-8">
+      <div className="py-4 sm:py-8">
         <div className="mx-auto max-w-7xl px-2">
           <H3 className="text-center">
             Built using a range of languages and services

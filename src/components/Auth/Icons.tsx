@@ -126,7 +126,7 @@ export const bitbucket = () => (
     </defs>
     <title>Bitbucket-blue</title>
     <g id="Layer_2" data-name="Layer 2">
-      <g id="Blue" transform="translate(0 -3.13)">
+      <g id="Blue" transform="tranneutral(0 -3.13)">
         <path
           d="M2,6.26A2,2,0,0,0,0,8.58L8.49,60.12a2.72,2.72,0,0,0,2.66,2.27H51.88a2,2,0,0,0,2-1.68L62.37,8.59a2,2,0,0,0-2-2.32ZM37.75,43.51h-13L21.23,25.12H40.9Z"
           fill="#2684ff"
@@ -169,7 +169,7 @@ export const azure = () => (
       x2="-1261.911"
       y1="877.268"
       y2="899.466"
-      gradientTransform="translate(1981.75 -1362.063) scale(1.5625)"
+      gradientTransform="tranneutral(1981.75 -1362.063) scale(1.5625)"
       gradientUnits="userSpaceOnUse"
     >
       <stop offset="0" stop-color="#114a8b"/>
@@ -189,7 +189,7 @@ export const azure = () => (
       x2="-1253.788"
       y1="887.612"
       y2="888.2"
-      gradientTransform="translate(1981.75 -1362.063) scale(1.5625)"
+      gradientTransform="tranneutral(1981.75 -1362.063) scale(1.5625)"
       gradientUnits="userSpaceOnUse"
     >
       <stop offset="0" stop-opacity=".3"/>
@@ -208,7 +208,7 @@ export const azure = () => (
       x2="-1244.704"
       y1="876.6"
       y2="898.575"
-      gradientTransform="translate(1981.75 -1362.063) scale(1.5625)"
+      gradientTransform="tranneutral(1981.75 -1362.063) scale(1.5625)"
       gradientUnits="userSpaceOnUse"
     >
       <stop offset="0" stop-color="#3ccbf4"/>
