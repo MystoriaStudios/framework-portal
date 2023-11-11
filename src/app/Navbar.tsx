@@ -28,7 +28,7 @@ export function Navbar() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(new Date());
+      setTime(time || new Date());
     }, 500);
 
     return () => clearInterval(interval);

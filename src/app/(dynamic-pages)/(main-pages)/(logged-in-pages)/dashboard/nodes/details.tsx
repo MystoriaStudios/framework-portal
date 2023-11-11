@@ -1,6 +1,5 @@
 "use client";
 
-import classNames from "classnames";
 import React, {useEffect, useState} from "react";
 import useSWR from 'swr'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -140,93 +139,5 @@ export function NodeDetails() {
 
       </div>
     </div>
-  );
-}
-
-
-function Toggle(props: {
-  checked: boolean;
-  onChange: () => void;
-  disabled: boolean;
-}) {
-  return (
-    <div className="flex items-center justify-end flex-1">
-      <button
-        disabled={props.disabled}
-        onClick={props.onChange}
-        className={classNames({
-          "rounded-l-lg py-2 px-4 border-solid border border-neutral-300 transition text-sm font-semibold":
-            true,
-          "bg-neutral-100": !props.checked,
-          "bg-neutral-50 text-neutral-500 cursor-not-allowed": props.disabled,
-        })}
-      >
-        List
-      </button>
-      <button
-        disabled={props.disabled}
-        onClick={props.onChange}
-        className={classNames({
-          "rounded-r-lg py-2 px-4 border-solid border border-neutral-300 -ml-[1px] transition text-sm font-semibold":
-            true,
-          "bg-neutral-100": props.checked,
-          "bg-neutral-50 text-neutral-500 cursor-not-allowed": props.disabled,
-        })}
-      >
-        JSON
-      </button>
-    </div>
-  );
-}
-
-function CopyButton(props: { text: string }) {
-  const [tooltipShown, setTooltipShown] = useState(false);
-
-  useEffect(() => {
-    if (tooltipShown) {
-      const timeout = setTimeout(() => setTooltipShown(false), 2000);
-      return () => clearTimeout(timeout);
-    }
-  }, [tooltipShown]);
-
-  return (
-    <>
-      <button
-        onClick={() => {
-          if (navigator.clipboard) navigator.clipboard.writeText(props.text);
-          setTooltipShown(true);
-        }}
-      >
-        <CopyIcon/>
-      </button>
-
-      <div
-        className={classNames({
-          "absolute z-10 bg-neutral-900 text-white rounded p-2 text-xs transition-all ease-in-out translate-x-60 shadow-sm shadow-neutral-500":
-            true,
-          "translate-y-10 opacity-0": !tooltipShown,
-          "translate-y-6": tooltipShown,
-        })}
-      >
-        Copied!
-      </div>
-    </>
-  );
-}
-
-function JSONOutput(props: { json: any }) {
-  useEffect(() => {
-    if (window.Prism) {
-      console.log(`highlighting`);
-      window.Prism.highlightAll();
-    }
-  }, []);
-
-  return (
-    <pre className="px-8 sm:px-6 text-black text-sm">
-      <code className="language-json">
-        {JSON.stringify(props.json, null, 2)}
-      </code>
-    </pre>
   );
 }
