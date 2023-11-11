@@ -11,9 +11,11 @@ export async function insertOrganizationAction(payload: {
   const supabaseClient = createSupabaseServerActionClient();
   const data = await insertOrganization(supabaseClient, payload);
   revalidatePath('/');
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return data.id;
 }
-export async function getOrganizationAction(id: string | string[]) {
+export async function getOrganizationAction(id: string) {
   const supabaseClient = createSupabaseServerActionClient();
   return await getOrganization(supabaseClient, id);
 }
