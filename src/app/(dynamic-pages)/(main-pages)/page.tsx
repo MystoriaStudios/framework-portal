@@ -7,6 +7,7 @@ import {H1} from "@/components/ui/Typography/H1";
 import {P} from "@/components/ui/Typography/P";
 import NewsletterHero from "@/app/NewsletterHero";
 import {H3} from "@/components/ui/Typography/H3";
+import {Faq} from "@/components/ui/Faq";
 
 async function fetchData(supabaseClient: AppSupabaseClient) {
   const [items] = await Promise.all([
@@ -32,6 +33,7 @@ export default async function HomePage() {
       </div>
 
       <NewsletterHero/>
+      <Faq />
       <div className="bg-white py-4 sm:py-8">
         <div className="mx-auto max-w-7xl px-2">
           <H3 className="text-center">
