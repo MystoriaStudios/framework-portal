@@ -1,5 +1,5 @@
 import {ReactNode} from 'react';
-import {redirect, useParams} from 'next/navigation';
+import {redirect} from 'next/navigation';
 import {createSupabaseServerComponentClient} from '@/supabase-clients/createSupabaseServerComponentClient';
 import OrganizationAuthWrapper
   from "@/app/(dynamic-pages)/(main-pages)/(logged-in-pages)/dashboard/[organization]/OrganizationAuthWrapper";
