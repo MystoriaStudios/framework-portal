@@ -2,6 +2,7 @@
 import {Table} from '@/types';
 import Link from 'next/link';
 import React from "react";
+import {H4} from "@/components/ui/Typography/H4";
 
 export const BlogHero = ({items}: { items: Table<'items'>[] }) => {
   return (
@@ -9,8 +10,10 @@ export const BlogHero = ({items}: { items: Table<'items'>[] }) => {
       {items.length ? (
         <div className={'grid lg:grid-cols-2 xl:grid-cols-3 grid-span-row gap-4'}>
           {items.map((item) => (
-            <article key={item.id} className="flex max-w-xl flex-col items-start justify-between shadow rounded-lg p-4">
-              <div className="flex items-center gap-x-4 text-xs">
+            <article key={item.id} className="flex max-w-xl flex-col items-start justify-between shadow rounded-lg">
+              <img width={512} className="mx-auto rounded-t-lg" src={"https://media.istockphoto.com/id/1413837275/photo/abstract-it-design-background-with-a-tilted-triangular-grid-surface-and-python-computer.webp?b=1&s=170667a&w=0&k=20&c=niNjthAGYXZ9zF8a5d9klfKftbd4Ih_F0jWKP4N3DNM="} />
+
+              <div className="flex items-center gap-x-4 text-xs p-4">
                 <time dateTime={item.created_at} className="text-gray-500">
                   {item.created_at}
                 </time>
@@ -20,15 +23,16 @@ export const BlogHero = ({items}: { items: Table<'items'>[] }) => {
                   {item.id.substring(0, 8)}
                 </div>
               </div>
-              <div className="group relative">
+              <div className="group relative p-4">
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                   <Link
                     href={`/blog/${item.id}`}>
-                    <span className="absolute inset-0"/>
-                    {item.name}
+                    <H4>
+                      {item.name}
+                    </H4>
                   </Link>
                 </h3>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{item.description}</p>
+                <p className="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">{item.description}</p>
               </div>
             </article>
           ))}

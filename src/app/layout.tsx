@@ -18,8 +18,8 @@ const roboto_mono = Roboto_Mono({
 });
 
 export const metadata = {
-  title: 'Nextbase Open source starter',
-  description: 'Built with Next.js, Supabase, and Tailwind CSS',
+  title: 'Framework',
+  description: 'Framework',
 };
 
 export default async function RootLayout({

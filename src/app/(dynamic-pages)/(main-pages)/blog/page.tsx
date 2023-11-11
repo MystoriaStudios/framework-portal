@@ -5,6 +5,7 @@ import React from "react";
 import {H1} from "@/components/ui/Typography/H1";
 import {P} from "@/components/ui/Typography/P";
 import Link from "next/link";
+import {H4} from "@/components/ui/Typography/H4";
 
 async function fetchData(supabaseClient: AppSupabaseClient) {
   const [items] = await Promise.all([
@@ -31,16 +32,31 @@ export default async function HomePage() {
           {initialItems.length ? (
             <div className={'grid lg:grid-cols-2 xl:grid-cols-3 grid-span-row gap-4'}>
               {initialItems.map((item) => (
-                <Link
-                  href={`/blog/${item.id}`}
-                  className="px-3 block cursor-pointer pt-4 pb-3 text-left text-sm font-semibold text-gray-900 divide-y divide-gray-200 bg-white shadow ring-1 ring-black ring-opacity-5 md:rounded-lg"
-                  key={item.id}
-                >
-                  <div className="space-y-2">
-                    <p className="text-rose-800 text-lg">{item.name}</p>
-                    <p className="text-gray-600 text-sm">{item.description}</p>
+                <article key={item.id} className="flex max-w-xl flex-col items-start justify-between shadow rounded-lg">
+                  <img width={512} className="mx-auto rounded-t-lg" src={"https://media.istockphoto.com/id/1413837275/photo/abstract-it-design-background-with-a-tilted-triangular-grid-surface-and-python-computer.webp?b=1&s=170667a&w=0&k=20&c=niNjthAGYXZ9zF8a5d9klfKftbd4Ih_F0jWKP4N3DNM="} />
+
+                  <div className="flex items-center gap-x-4 text-xs p-4">
+                    <time dateTime={item.created_at} className="text-gray-500">
+                      {item.created_at}
+                    </time>
+                    <div
+                      className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                    >
+                      {item.id.substring(0, 8)}
+                    </div>
                   </div>
-                </Link>
+                  <div className="group relative p-4">
+                    <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                      <Link
+                        href={`/blog/${item.id}`}>
+                        <H4>
+                          {item.name}
+                        </H4>
+                      </Link>
+                    </h3>
+                    <p className="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">{item.description}</p>
+                  </div>
+                </article>
               ))}
             </div>
           ) : (
