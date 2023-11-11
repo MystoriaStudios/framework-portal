@@ -9,7 +9,7 @@ export const BlogHero = ({items}: { items: Table<'items'>[] }) => {
       {items.length ? (
         <div className={'grid lg:grid-cols-2 xl:grid-cols-3 grid-span-row gap-4'}>
           {items.map((item) => (
-            <article key={item.id} className="flex max-w-xl flex-col items-start justify-between">
+            <article key={item.id} className="flex max-w-xl flex-col items-start justify-between shadow rounded-lg p-4">
               <div className="flex items-center gap-x-4 text-xs">
                 <time dateTime={item.created_at} className="text-gray-500">
                   {item.created_at}
@@ -23,7 +23,7 @@ export const BlogHero = ({items}: { items: Table<'items'>[] }) => {
               <div className="group relative">
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                   <Link
-                    href={`/blog/${item.name}`}>
+                    href={`/blog/${item.id}`}>
                     <span className="absolute inset-0"/>
                     {item.name}
                   </Link>
