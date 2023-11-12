@@ -16,7 +16,7 @@ export const BlogHero = ({items}: { items: Table<'items'>[] }) => {
               key={item.id}
               className="flex max-w-xl flex-col items-start justify-between shadow rounded-lg"
             >
-              <iMAGE
+              <img
                 width={512}
                 className="mx-auto rounded-t-lg"
                 src={
