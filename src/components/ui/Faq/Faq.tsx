@@ -87,19 +87,19 @@ export const Faq = () => {
           </div>
         </div>
         <div className="space-y-4">
-          <Item title="Why should i use Framework?">
+          <Item title="Why should I use Framework?">
             We provide a stable product that is able to scale to whatever you
             may require. We support lots of major server environments and you
             can deploy your own network in a matter of minutes!
           </Item>
-          <Item title="Why is emily a faggot?">
-            nobody knowws sshe just is stbh
+          <Item title="Can I migrate an existing network to Framework?">
+            Yes
           </Item>
-          <Item title="Nopox sometims doeess good codee">
+          <Item title="TODO more questions here">
             someteimes raaeerly but yk
           </Item>
-          <Item title="How much money you got on you?">
-            i got 99 ceentss aand yo bitch in one hit mee
+          <Item title="How much does it cost to start my first network?">
+            TODO: add simple pricing & link to the pricing page
           </Item>
         </div>
       </div>
