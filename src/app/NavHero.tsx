@@ -31,10 +31,10 @@ export function NavHero() {
           />
         </span>
       ) : (
-        <>
+        <span className="flex ml-auto gap-x-4">
           <NavLink href="/login">Login</NavLink>
           <NavLink href="/register">Register</NavLink>
-        </>
+        </span>
       )}
 
       <NavTheme/>
