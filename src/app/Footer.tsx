@@ -16,7 +16,7 @@ export default function Footer() {
                 <img
                   src={'/assets/logo.svg'}
                   className="h-9 block sm:h-9"
-                  alt="Nextbase Logo"
+                  alt="Mystoria Logo"
                 />
               </Link>
               <P>
