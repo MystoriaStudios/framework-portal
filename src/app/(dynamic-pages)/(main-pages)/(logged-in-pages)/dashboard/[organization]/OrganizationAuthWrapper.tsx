@@ -38,7 +38,7 @@ async function OrganizationAuthWrapperServer({
       <>
         <div
           className={
-            'block w-1/2 -mt-4 mx-auto grid grid-cols-4 bg-neutral-50/75 rounded-b-2xl p-2'
+            'block w-1/2 -mt-4 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 bg-neutral-50/75 dark:bg-neutral-900/75 dark:rounded-t-2xl rounded-b-2xl p-2'
           }
         >
           <Link

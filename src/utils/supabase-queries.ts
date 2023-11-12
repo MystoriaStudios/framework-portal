@@ -132,6 +132,20 @@ export const getOrganization = async (
   return data;
 };
 
+export const getOrganizations = async (
+  supabase: AppSupabaseClient
+): Promise<Array<Table<'organizations'>>> => {
+  const {data, error} = await supabase
+    .from('organizations')
+    .select('*')
+
+  if (error) {
+    throw error;
+  }
+
+  return data;
+};
+
 export const signInWithMagicLink = async (
   supabase: AppSupabaseClient,
   email: string

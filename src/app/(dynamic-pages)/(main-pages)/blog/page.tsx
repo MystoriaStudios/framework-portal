@@ -19,15 +19,16 @@ export default async function HomePage() {
   const {items: initialItems} = await fetchData(supabase);
   return (
     <>
-      <div className="text-center mt-16">
-        <H1>Blog Area</H1>
-        <P className="mt-4">
-          We are constantly working to update and improve the usability of
-          framework we regularly post updates on our blog!
-        </P>
-      </div>
       <div className="space-y-2">
         <div className="mt-8 md:w-1/2 lg:w-2/3 mx-auto">
+          <div className="mt-16 mb-8">
+            <H1>Blog Area</H1>
+            <P className="mt-4">
+              We are constantly working to update and improve the usability of
+              framework we regularly post updates on our blog!
+            </P>
+          </div>
+
           {initialItems.length ? (
             <div
               className={

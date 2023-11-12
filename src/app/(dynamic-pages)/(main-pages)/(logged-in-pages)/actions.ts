@@ -1,7 +1,13 @@
 'use server';
 
 import {createSupabaseServerActionClient} from '@/supabase-clients/createSupabaseServerActionClient';
-import {deleteOrganization, getOrganization, insertOrganization, updateOrganization,} from '@/utils/supabase-queries';
+import {
+  deleteOrganization,
+  getOrganization,
+  getOrganizations,
+  insertOrganization,
+  updateOrganization,
+} from '@/utils/supabase-queries';
 import {revalidatePath} from 'next/cache';
 
 export async function insertOrganizationAction(payload: {
@@ -19,6 +25,11 @@ export async function insertOrganizationAction(payload: {
 export async function getOrganizationAction(id: string) {
   const supabaseClient = createSupabaseServerActionClient();
   return await getOrganization(supabaseClient, id);
+}
+
+export async function getOrganizationsAction(id: string) {
+  const supabaseClient = createSupabaseServerActionClient();
+  return await getOrganizations(supabaseClient);
 }
 
 export async function updateOrganizationAction(payload: {
