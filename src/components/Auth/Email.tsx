@@ -1,18 +1,18 @@
-import { classNames } from '@/utils/classNames';
-import { useMemo, useState } from 'react';
-import { Button } from '../ui/button';
-import { Label } from '@/components/ui/label';
-import { T } from '@/components/ui/Typography';
+import {classNames} from '@/utils/classNames';
+import {useMemo, useState} from 'react';
+import {Button} from '../ui/button';
+import {Label} from '@/components/ui/label';
+import {T} from '@/components/ui/Typography';
 import Link from 'next/link';
 
 export const Email = ({
-  onSubmit,
-  view,
-  isLoading,
-  successMessage,
-  label = 'Email address',
-  defaultValue,
-}: {
+                        onSubmit,
+                        view,
+                        isLoading,
+                        successMessage,
+                        label = 'Email address',
+                        defaultValue,
+                      }: {
   onSubmit: (email: string) => void;
   view: 'sign-in' | 'sign-up' | 'update-email' | 'forgot-password';
   isLoading: boolean;

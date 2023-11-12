@@ -1,14 +1,14 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { useRouter } from 'next/navigation';
-import { useRef, useState } from 'react';
-import { toast } from 'react-hot-toast';
+import {Button} from '@/components/ui/button';
+import {useMutation, useQueryClient} from '@tanstack/react-query';
+import {useRouter} from 'next/navigation';
+import {useRef, useState} from 'react';
+import {toast} from 'react-hot-toast';
 
 export const ClientPage = ({
-  insertItemAction,
-}: {
+                             insertItemAction,
+                           }: {
   insertItemAction: (item: {
     name: string;
     description: string;
@@ -18,7 +18,7 @@ export const ClientPage = ({
   const queryClient = useQueryClient();
   const toastRef = useRef<string | null>(null);
 
-  const { mutate } = useMutation(
+  const {mutate} = useMutation(
     async (item: { name: string; description: string }) => {
       return insertItemAction(item);
     },
@@ -29,14 +29,14 @@ export const ClientPage = ({
       },
 
       onSuccess: (newItemId) => {
-        toast.success('Item created', { id: toastRef.current });
+        toast.success('Item created', {id: toastRef.current});
         toastRef.current = null;
         router.refresh();
         queryClient.invalidateQueries(['items']);
         router.push(`/blog/${newItemId}`);
       },
       onError: () => {
-        toast.error('Failed to create item', { id: toastRef.current });
+        toast.error('Failed to create item', {id: toastRef.current});
         toastRef.current = null;
       },
     }
@@ -52,7 +52,7 @@ export const ClientPage = ({
         //TODO: do better validation 🤷‍♂️
         const name = formData.get('name') as string;
         const description = formData.get('description') as string;
-        mutate({ name, description });
+        mutate({name, description});
       }}
     >
       <div>

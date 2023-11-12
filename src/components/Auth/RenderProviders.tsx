@@ -1,12 +1,8 @@
-import { AuthProvider } from '@/types';
+import {AuthProvider} from '@/types';
 import * as SocialIcons from '@/components/Auth/Icons';
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from '@/components/ui/HoverCard';
-import { T } from '@/components/ui/Typography';
-import { Button } from '@/components/ui/button';
+import {HoverCard, HoverCardContent, HoverCardTrigger,} from '@/components/ui/HoverCard';
+import {T} from '@/components/ui/Typography';
+import {Button} from '@/components/ui/button';
 
 function capitalize(word: string) {
   const lower = word.toLowerCase();
@@ -16,10 +12,10 @@ function capitalize(word: string) {
 const isDemo = false;
 
 export const RenderProviders = ({
-  providers,
-  onProviderLoginRequested,
-  isLoading,
-}: {
+                                  providers,
+                                  onProviderLoginRequested,
+                                  isLoading,
+                                }: {
   providers: AuthProvider[];
   onProviderLoginRequested: (provider: AuthProvider) => void;
   isLoading: boolean;
@@ -38,7 +34,7 @@ export const RenderProviders = ({
             className="bg-white dark:bg-white text-black dark:text-black border h-10 border-neutral-400 dark:border-neutral-600 rounded-lg"
           >
             <div className="mr-2">
-              <AuthIcon />
+              <AuthIcon/>
             </div>
             <span className="">{capitalize(provider)}</span>
           </Button>
@@ -50,7 +46,8 @@ export const RenderProviders = ({
                 <HoverCardTrigger asChild>
                   <div className="w-full [&>button]:w-full">{component}</div>
                 </HoverCardTrigger>
-                <HoverCardContent className="w-80 dark:bg-black bg-white border border-neutral-300 dark:border-neutral-700">
+                <HoverCardContent
+                  className="w-80 dark:bg-black bg-white border border-neutral-300 dark:border-neutral-700">
                   <T.Small className="text-muted-foreground">
                     ⚠️ As this is a demo, the social media authentication
                     buttons aren't linked. However, you can connect them in your

@@ -2,10 +2,10 @@
 /* AUTH */
 /* ==================== */
 
-import { supabaseUserClientComponentClient } from '@/supabase-clients/supabaseUserClientComponentClient';
-import { AuthProvider } from '@/types';
-import { useMutation } from '@tanstack/react-query';
-import { useRef } from 'react';
+import {supabaseUserClientComponentClient} from '@/supabase-clients/supabaseUserClientComponentClient';
+import {AuthProvider} from '@/types';
+import {useMutation} from '@tanstack/react-query';
+import {useRef} from 'react';
 import toast from 'react-hot-toast';
 import {
   resetPassword,
@@ -21,17 +21,17 @@ import {
 /* ==================== */
 
 export const useSignInWithMagicLink = ({
-  onSuccess,
-  onMutate,
-  onError,
-}: {
+                                         onSuccess,
+                                         onMutate,
+                                         onError,
+                                       }: {
   onSuccess?: () => void;
   onMutate?: () => void;
   onError?: (error: unknown) => void;
 }) => {
   const toastRef = useRef<string | null>(null);
   return useMutation(
-    async ({ email }: { email: string }) => {
+    async ({email}: { email: string }) => {
       return signInWithMagicLink(supabaseUserClientComponentClient, email);
     },
     {
@@ -59,17 +59,17 @@ export const useSignInWithMagicLink = ({
 };
 
 export const useSignInWithPassword = ({
-  onSuccess,
-  onMutate,
-  onError,
-}: {
+                                        onSuccess,
+                                        onMutate,
+                                        onError,
+                                      }: {
   onSuccess?: () => void;
   onMutate?: () => void;
   onError?: (error: unknown) => void;
 }) => {
   const toastRef = useRef<string | null>(null);
   return useMutation(
-    async ({ email, password }: { email: string; password: string }) => {
+    async ({email, password}: { email: string; password: string }) => {
       return signInWithPassword(
         supabaseUserClientComponentClient,
         email,
@@ -101,17 +101,17 @@ export const useSignInWithPassword = ({
 };
 
 export const useResetPassword = ({
-  onSuccess,
-  onMutate,
-  onError,
-}: {
+                                   onSuccess,
+                                   onMutate,
+                                   onError,
+                                 }: {
   onSuccess?: () => void;
   onMutate?: () => void;
   onError?: (error: unknown) => void;
 }) => {
   const toastRef = useRef<string | null>(null);
   return useMutation(
-    async ({ email }: { email: string }) => {
+    async ({email}: { email: string }) => {
       return resetPassword(supabaseUserClientComponentClient, email);
     },
     {
@@ -139,17 +139,17 @@ export const useResetPassword = ({
 };
 
 export const useUpdatePassword = ({
-  onSuccess,
-  onMutate,
-  onError,
-}: {
+                                    onSuccess,
+                                    onMutate,
+                                    onError,
+                                  }: {
   onSuccess?: () => void;
   onMutate?: () => void;
   onError?: (error: unknown) => void;
 }) => {
   const toastRef = useRef<string | null>(null);
   return useMutation(
-    async ({ password }: { password: string }) => {
+    async ({password}: { password: string }) => {
       return updatePassword(supabaseUserClientComponentClient, password);
     },
     {
@@ -179,11 +179,11 @@ export const useUpdatePassword = ({
 export const useSignInWithProvider = () => {
   const toastRef = useRef<string | null>(null);
   return useMutation(
-    async ({ provider }: { provider: AuthProvider }) => {
+    async ({provider}: { provider: AuthProvider }) => {
       return signInWithProvider(supabaseUserClientComponentClient, provider);
     },
     {
-      onMutate: ({ provider }) => {
+      onMutate: ({provider}) => {
         toastRef.current = toast.loading(`Signing in with ${provider}...`);
       },
     }
@@ -191,17 +191,17 @@ export const useSignInWithProvider = () => {
 };
 
 export const useSignUp = ({
-  onSuccess,
-  onMutate,
-  onError,
-}: {
+                            onSuccess,
+                            onMutate,
+                            onError,
+                          }: {
   onSuccess?: () => void;
   onMutate?: () => void;
   onError?: (error: unknown) => void;
 }) => {
   const toastRef = useRef<string | null>(null);
   return useMutation(
-    async ({ email, password }: { email: string; password: string }) => {
+    async ({email, password}: { email: string; password: string }) => {
       return signUp(supabaseUserClientComponentClient, email, password);
     },
     {

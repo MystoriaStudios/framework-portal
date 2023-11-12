@@ -1,11 +1,11 @@
-import { AppSupabaseClient } from '@/types';
-import { getAllItems } from '@/utils/supabase-queries';
-import { createSupabaseServerComponentClient } from '@/supabase-clients/createSupabaseServerComponentClient';
+import {AppSupabaseClient} from '@/types';
+import {getAllItems} from '@/utils/supabase-queries';
+import {createSupabaseServerComponentClient} from '@/supabase-clients/createSupabaseServerComponentClient';
 import React from 'react';
-import { H1 } from '@/components/ui/Typography/H1';
-import { P } from '@/components/ui/Typography/P';
+import {H1} from '@/components/ui/Typography/H1';
+import {P} from '@/components/ui/Typography/P';
 import Link from 'next/link';
-import { H4 } from '@/components/ui/Typography/H4';
+import {H4} from '@/components/ui/Typography/H4';
 
 async function fetchData(supabaseClient: AppSupabaseClient) {
   const [items] = await Promise.all([getAllItems(supabaseClient)]);
@@ -16,7 +16,7 @@ async function fetchData(supabaseClient: AppSupabaseClient) {
 
 export default async function HomePage() {
   const supabase = createSupabaseServerComponentClient();
-  const { items: initialItems } = await fetchData(supabase);
+  const {items: initialItems} = await fetchData(supabase);
   return (
     <>
       <div className="text-center mt-16">
@@ -54,7 +54,8 @@ export default async function HomePage() {
                     >
                       {item.created_at}
                     </time>
-                    <div className="relative z-10 rounded-full bg-neutral-50 px-3 py-1.5 font-medium text-neutral-600 hover:bg-neutral-100">
+                    <div
+                      className="relative z-10 rounded-full bg-neutral-50 px-3 py-1.5 font-medium text-neutral-600 hover:bg-neutral-100">
                       {item.id.substring(0, 8)}
                     </div>
                   </div>

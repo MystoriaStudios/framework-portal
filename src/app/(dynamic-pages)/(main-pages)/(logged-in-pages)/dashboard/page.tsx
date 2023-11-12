@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFolder } from '@fortawesome/free-regular-svg-icons';
-import { H4 } from '@/components/ui/Typography/H4';
-import { P } from '@/components/ui/Typography/P';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faFolder} from '@fortawesome/free-regular-svg-icons';
+import {H4} from '@/components/ui/Typography/H4';
+import {P} from '@/components/ui/Typography/P';
 import Link from 'next/link';
-import { faAdd, faUserAlt } from '@fortawesome/free-solid-svg-icons';
+import {faAdd, faUserAlt} from '@fortawesome/free-solid-svg-icons';
 
 export default function Dashboard() {
   return (

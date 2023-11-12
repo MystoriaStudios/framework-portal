@@ -1,9 +1,9 @@
 'use client';
-import { redirect, useParams } from 'next/navigation';
-import { getOrganization } from '@/utils/supabase-queries';
-import { createSupabaseStaticClient } from '@/supabase-clients/createSupabaseStaticClient';
+import {redirect, useParams} from 'next/navigation';
+import {getOrganization} from '@/utils/supabase-queries';
+import {createSupabaseStaticClient} from '@/supabase-clients/createSupabaseStaticClient';
 
-export default function OrganizationAuthWrapper({ id, children }) {
+export default function OrganizationAuthWrapper({id, children}) {
   const params = useParams();
   const organization_id = `${params.organization}`;
 
@@ -17,10 +17,10 @@ export default function OrganizationAuthWrapper({ id, children }) {
 }
 
 async function OrganizationAuthWrapperServer({
-  id,
-  organization_id,
-  children,
-}) {
+                                               id,
+                                               organization_id,
+                                               children,
+                                             }) {
   ('');
   try {
     const supabaseClient = createSupabaseStaticClient();

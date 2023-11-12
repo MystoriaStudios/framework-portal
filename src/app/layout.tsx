@@ -1,8 +1,8 @@
-import { ClientLayout } from './ClientLayout';
-import { Inter, Roboto_Mono } from 'next/font/google';
+import {ClientLayout} from './ClientLayout';
+import {Inter, Roboto_Mono} from 'next/font/google';
 import './globals.css';
 import Banner from './Banner';
-import { Navbar } from './Navbar';
+import {Navbar} from './Navbar';
 import Footer from '@/app/Footer';
 
 const inter = Inter({
@@ -23,21 +23,21 @@ export const metadata = {
 };
 
 export default async function RootLayout({
-  children,
-}: {
+                                           children,
+                                         }: {
   children: React.ReactNode;
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${roboto_mono.variable}`}>
-      <head />
-      <body>
-        <Banner />
-        <div className="space-y-4 dark:bg-neutral-800 min-h-screen">
-          <Navbar />
-          <ClientLayout>{children}</ClientLayout>
-        </div>
-        <Footer />
-      </body>
+    <head/>
+    <body>
+    <Banner/>
+    <div className="space-y-4 dark:bg-neutral-800 min-h-screen">
+      <Navbar/>
+      <ClientLayout>{children}</ClientLayout>
+    </div>
+    <Footer/>
+    </body>
     </html>
   );
 }

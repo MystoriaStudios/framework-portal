@@ -1,22 +1,22 @@
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { getItem } from '@/utils/supabase-queries';
-import { ConfirmDeleteItemDialog } from './ConfirmDeleteItemDialog';
-import { T } from '@/components/ui/Typography';
+import {notFound} from 'next/navigation';
+import {getItem} from '@/utils/supabase-queries';
+import {ConfirmDeleteItemDialog} from './ConfirmDeleteItemDialog';
+import {T} from '@/components/ui/Typography';
 import ArrowLeft from 'lucide-react/dist/esm/icons/arrow-left';
-import { createSupabaseServerComponentClient } from '@/supabase-clients/createSupabaseServerComponentClient';
-import { deleteItemAction } from '../../actions';
+import {createSupabaseServerComponentClient} from '@/supabase-clients/createSupabaseServerComponentClient';
+import {deleteItemAction} from '../../actions';
 
 export default async function Item({
-  params,
-}: {
+                                     params,
+                                   }: {
   params: {
     itemId: string;
   };
 }) {
   const supabaseClient = createSupabaseServerComponentClient();
 
-  const { itemId } = params;
+  const {itemId} = params;
   try {
     const item = await getItem(supabaseClient, itemId);
     return (
@@ -26,7 +26,7 @@ export default async function Item({
             href="/blog"
             className="text-sm text-blue-600 text-underline flex items-center space-x-2"
           >
-            <ArrowLeft /> <span>View all posts</span>
+            <ArrowLeft/> <span>View all posts</span>
           </Link>
           <T.H1>{item.name}</T.H1>
           <T.Subtle>Description: {item.description}</T.Subtle>

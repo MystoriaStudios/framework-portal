@@ -1,6 +1,6 @@
-import { DynamicLayoutProviders } from './DynamicLayoutProviders';
-import { AppSupabaseClient } from '@/types';
-import { createSupabaseServerComponentClient } from '@/supabase-clients/createSupabaseServerComponentClient';
+import {DynamicLayoutProviders} from './DynamicLayoutProviders';
+import {AppSupabaseClient} from '@/types';
+import {createSupabaseServerComponentClient} from '@/supabase-clients/createSupabaseServerComponentClient';
 
 // do not cache this layout
 export const dynamic = 'force-dynamic';
@@ -10,7 +10,7 @@ export const revalidate = 0;
 async function fetchSession(supabaseClient: AppSupabaseClient) {
   // This is a server-side call, so it will not trigger a revalidation
   const {
-    data: { session },
+    data: {session},
     error,
   } = await supabaseClient.auth.getSession();
 
@@ -30,8 +30,8 @@ export const metadata = {
 };
 
 export default async function RootLayout({
-  children,
-}: {
+                                           children,
+                                         }: {
   children: React.ReactNode;
 }) {
   const supabaseClient = createSupabaseServerComponentClient();

@@ -1,6 +1,6 @@
-import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline';
+import {CalendarDaysIcon, HandRaisedIcon} from '@heroicons/react/24/outline';
 import React from 'react';
-import { H2 } from '@/components/ui/Typography/H2';
+import {H2} from '@/components/ui/Typography/H2';
 
 export default function NewsletterHero() {
   return (

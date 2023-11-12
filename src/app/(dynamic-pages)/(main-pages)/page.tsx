@@ -1,13 +1,13 @@
-import { AppSupabaseClient } from '@/types';
-import { BlogHero } from './BlogHero';
-import { getAllItems } from '@/utils/supabase-queries';
-import { createSupabaseServerComponentClient } from '@/supabase-clients/createSupabaseServerComponentClient';
+import {AppSupabaseClient} from '@/types';
+import {BlogHero} from './BlogHero';
+import {getAllItems} from '@/utils/supabase-queries';
+import {createSupabaseServerComponentClient} from '@/supabase-clients/createSupabaseServerComponentClient';
 import React from 'react';
-import { H1 } from '@/components/ui/Typography/H1';
-import { P } from '@/components/ui/Typography/P';
+import {H1} from '@/components/ui/Typography/H1';
+import {P} from '@/components/ui/Typography/P';
 import NewsletterHero from '@/app/NewsletterHero';
-import { H3 } from '@/components/ui/Typography/H3';
-import { Faq } from '@/components/ui/Faq';
+import {H3} from '@/components/ui/Typography/H3';
+import {Faq} from '@/components/ui/Faq';
 
 async function fetchData(supabaseClient: AppSupabaseClient) {
   const [items] = await Promise.all([getAllItems(supabaseClient)]);
@@ -18,7 +18,7 @@ async function fetchData(supabaseClient: AppSupabaseClient) {
 
 export default async function HomePage() {
   const supabase = createSupabaseServerComponentClient();
-  const { items: initialItems } = await fetchData(supabase);
+  const {items: initialItems} = await fetchData(supabase);
   return (
     <>
       <div className="text-center mt-16">
@@ -29,17 +29,18 @@ export default async function HomePage() {
         </P>
       </div>
       <div className="space-y-2">
-        <BlogHero items={initialItems} />
+        <BlogHero items={initialItems}/>
       </div>
 
-      <NewsletterHero />
-      <Faq />
+      <NewsletterHero/>
+      <Faq/>
       <div className="py-4 sm:py-8">
         <div className="mx-auto max-w-7xl px-2">
           <H3 className="text-center">
             Built using a range of languages and services
           </H3>
-          <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+          <div
+            className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
             <img
               className="dark:hidden col-span-2 max-h-12 w-full object-contain lg:col-span-1 p-2"
               src="/assets/kotlin_black.svg"

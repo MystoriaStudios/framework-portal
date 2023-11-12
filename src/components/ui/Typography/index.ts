@@ -1,13 +1,13 @@
-import { H1 } from './H1';
-import { H2 } from './H2';
-import { H3 } from './H3';
-import { H4 } from './H4';
-import { Blockquote } from './Blockquote';
-import { P } from './P';
-import { Large } from './Large';
-import { Small } from './Small';
-import { Subtle } from './Subtle';
-import { List } from './List';
+import {H1} from './H1';
+import {H2} from './H2';
+import {H3} from './H3';
+import {H4} from './H4';
+import {Blockquote} from './Blockquote';
+import {P} from './P';
+import {Large} from './Large';
+import {Small} from './Small';
+import {Subtle} from './Subtle';
+import {List} from './List';
 
 const Typography = {
   H1,
@@ -22,5 +22,5 @@ const Typography = {
   List,
 };
 
-export { Typography };
-export { Typography as T };
+export {Typography};
+export {Typography as T};
