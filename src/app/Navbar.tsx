@@ -57,10 +57,14 @@ export function Navbar() {
       )}
     >
       <div className="mr-6 flex lg:hidden space-x-2">
-        <MobileNavigation/>
+        <MobileNavigation />
         <div className={cn('block lg:hidden', 'relative ')}>
           <Link href="/" className="block" aria-label="Home page">
-            #
+            <img
+              src={'/assets/logo.svg'}
+              className="h-9 block sm:h-9"
+              alt="Nextbase Logo"
+            />
           </Link>
         </div>
       </div>
@@ -73,7 +77,11 @@ export function Navbar() {
           )}
         >
           <Link className="text-4xl px-2 font-bold" href="/" aria-label="Home page">
-            #
+            <img
+              src={'/assets/logo.svg'}
+              className="h-9 block sm:h-9"
+              alt="Nextbase Logo"
+            />
           </Link>
           <NavLink href="/" aria-label="Items">
             Home

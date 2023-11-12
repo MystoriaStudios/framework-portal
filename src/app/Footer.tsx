@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {P} from "@/components/ui/Typography/P";
+import React from "react";
 
 export default function Footer() {
   return (
@@ -16,7 +17,11 @@ export default function Footer() {
             <div className="space-y-8">
 
               <Link href="/" className="block" aria-label="Home page">
-                #
+                <img
+                  src={'/assets/logo.svg'}
+                  className="h-9 block sm:h-9"
+                  alt="Nextbase Logo"
+                />
               </Link>
               <P>Community-Driven server framework designed with simplicity and usability in mind.</P>
               <div className="flex space-x-6"><a className="text-xl text-neutral-500 hover:text-neutral-400"
