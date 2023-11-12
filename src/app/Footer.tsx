@@ -56,7 +56,7 @@ export default function Footer() {
                 </a>
                 <a
                   className="text-xl text-neutral-500 hover:text-neutral-400"
-                  href="https://twitter.com/rivet_gg"
+                  href="https://twitter.com/mystoriastudios"
                 >
                   <span className="sr-only">Twitter</span>
                   <svg
@@ -77,7 +77,7 @@ export default function Footer() {
                 </a>
                 <a
                   className="text-xl text-neutral-500 hover:text-neutral-400"
-                  href="https://github.com/rivet-gg"
+                  href="https://github.com/mystoriastudios"
                 >
                   <span className="sr-only">GitHub</span>
                   <svg
@@ -173,7 +173,7 @@ export default function Footer() {
                     <a
                       target="_blank"
                       className="text-sm leading-4 text-neutral-300 hover:text-neutral-400"
-                      href="https://rivet-gg.notion.site/Job-Board-eed66f2eab2b4d7ea3e21ccd63b22efe?pvs=4"
+                      href="/jobs"
                     >
                       <span className="text-rose-800 drop-shadow-[0_0_10px_rgba(221,214,254,0.5)]">
                         We're hiring!
@@ -202,7 +202,7 @@ export default function Footer() {
                   <li>
                     <a
                       className="text-sm leading-4 text-neutral-300 hover:text-neutral-400"
-                      href="https://rivet-gg.betteruptime.com/"
+                      href="https://uptime.mystoria.dev/"
                     >
                       <span className="">Status Page</span>
                     </a>
