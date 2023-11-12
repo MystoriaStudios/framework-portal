@@ -1,3 +1,5 @@
+import {H1} from "@/components/ui/Typography/H1";
+
 export default function About() {
-  return <h1>About</h1>;
+  return <H1>About</H1>;
 }
