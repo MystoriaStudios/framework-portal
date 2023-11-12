@@ -101,7 +101,7 @@ export function Navbar() {
           </Suspense>
 
           <div className="ml-auto w-full">
-            <div className={''}>
+            <div className={'ml-auto'}>
               <Suspense fallback={<div> Loading ... </div>}>
                 <DynamicNavHero/>
               </Suspense>
