@@ -47,8 +47,7 @@ export default function NewsletterHero() {
                 Weekly articles
               </dt>
               <dd className="mt-2 leading-7 text-neutral-400">
-                Non laboris consequat cupidatat laborum magna. Eiusmod non irure
-                cupidatat duis commodo amet.
+                Stay tuned for our latest weekly articles. Our content is curated to bring you insights and information that will help you succeed.
               </dd>
             </div>
             <div className="flex flex-col items-start">
@@ -60,8 +59,7 @@ export default function NewsletterHero() {
               </div>
               <dt className="mt-4 font-semibold text-neutral-800">No spam</dt>
               <dd className="mt-2 leading-7 text-neutral-400">
-                Officia excepteur ullamco ut sint duis proident non adipisicing.
-                Voluptate incididunt anim.
+                Your inbox is safe with us. We don't believe in spam. Expect only valuable content without the hassle.
               </dd>
             </div>
           </dl>
