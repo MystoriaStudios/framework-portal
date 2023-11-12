@@ -1,10 +1,10 @@
-import {AppSupabaseClient, AuthProvider, Table} from '@/types';
-import {toSiteURL} from './helpers';
+import { AppSupabaseClient, AuthProvider, Table } from '@/types';
+import { toSiteURL } from './helpers';
 
 export const getAllItems = async (
   supabase: AppSupabaseClient
 ): Promise<Array<Table<'items'>>> => {
-  const {data, error} = await supabase.from('items').select('*');
+  const { data, error } = await supabase.from('items').select('*');
 
   if (error) {
     throw error;
@@ -17,7 +17,7 @@ export const insertItem = async (
   supabase: AppSupabaseClient,
   item: { name: string; description: string }
 ): Promise<Table<'items'>> => {
-  const {data, error} = await supabase
+  const { data, error } = await supabase
     .from('items')
     .insert(item)
     .select('*')
@@ -34,7 +34,7 @@ export const updateItem = async (
   supabase: AppSupabaseClient,
   item: { id: string; name: string; description: string }
 ) => {
-  const {data, error} = await supabase.from('items').update(item).single();
+  const { data, error } = await supabase.from('items').update(item).single();
 
   if (error) {
     throw error;
@@ -44,7 +44,7 @@ export const updateItem = async (
 };
 
 export const deleteItem = async (supabase: AppSupabaseClient, id: string) => {
-  const {error} = await supabase.from('items').delete().match({id});
+  const { error } = await supabase.from('items').delete().match({ id });
 
   if (error) {
     throw error;
@@ -57,7 +57,7 @@ export const getItem = async (
   supabase: AppSupabaseClient,
   id: string
 ): Promise<Table<'items'>> => {
-  const {data, error} = await supabase
+  const { data, error } = await supabase
     .from('items')
     .select('*')
     .eq('id', id)
@@ -74,7 +74,7 @@ export const insertOrganization = async (
   supabase: AppSupabaseClient,
   item: { name: string }
 ): Promise<Table<'organizations'>> => {
-  const {data, error} = await supabase
+  const { data, error } = await supabase
     .from('organizations')
     .insert(item)
     .select('*')
@@ -91,7 +91,10 @@ export const updateOrganization = async (
   supabase: AppSupabaseClient,
   item: { id: string; name: string }
 ) => {
-  const {data, error} = await supabase.from('organizations').update(item).single();
+  const { data, error } = await supabase
+    .from('organizations')
+    .update(item)
+    .single();
 
   if (error) {
     throw error;
@@ -100,8 +103,11 @@ export const updateOrganization = async (
   return data;
 };
 
-export const deleteOrganization = async (supabase: AppSupabaseClient, id: string) => {
-  const {error} = await supabase.from('organizations').delete().match({id});
+export const deleteOrganization = async (
+  supabase: AppSupabaseClient,
+  id: string
+) => {
+  const { error } = await supabase.from('organizations').delete().match({ id });
 
   if (error) {
     throw error;
@@ -113,7 +119,7 @@ export const getOrganization = async (
   supabase: AppSupabaseClient,
   id: string
 ): Promise<Table<'organizations'>> => {
-  const {data, error} = await supabase
+  const { data, error } = await supabase
     .from('organizations')
     .select('*')
     .eq('id', id)
@@ -130,7 +136,7 @@ export const signInWithMagicLink = async (
   supabase: AppSupabaseClient,
   email: string
 ) => {
-  const {error} = await supabase.auth.signInWithOtp({
+  const { error } = await supabase.auth.signInWithOtp({
     email,
     options: {
       emailRedirectTo: toSiteURL('/auth/callback'),
@@ -147,7 +153,7 @@ export const signInWithPassword = async (
   email: string,
   password: string
 ) => {
-  const {error} = await supabase.auth.signInWithPassword({
+  const { error } = await supabase.auth.signInWithPassword({
     email,
     password,
   });
@@ -161,7 +167,7 @@ export const resetPassword = async (
   supabase: AppSupabaseClient,
   email: string
 ) => {
-  const {error} = await supabase.auth.resetPasswordForEmail(email, {
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
     redirectTo: toSiteURL('/update-password'),
   });
 
@@ -174,7 +180,7 @@ export const updatePassword = async (
   supabase: AppSupabaseClient,
   password: string
 ) => {
-  const {error} = await supabase.auth.updateUser({
+  const { error } = await supabase.auth.updateUser({
     password,
   });
 
@@ -187,7 +193,7 @@ export const signInWithProvider = async (
   supabase: AppSupabaseClient,
   provider: AuthProvider
 ) => {
-  const {error} = await supabase.auth.signInWithOAuth({
+  const { error } = await supabase.auth.signInWithOAuth({
     provider,
     options: {
       redirectTo: toSiteURL('/auth/callback'),
@@ -204,7 +210,7 @@ export const signUp = async (
   email: string,
   password: string
 ) => {
-  const {error} = await supabase.auth.signUp({
+  const { error } = await supabase.auth.signUp({
     email,
     password,
     options: {

@@ -1,5 +1,5 @@
-import {UpdatePassword} from './UpdatePassword';
+import { UpdatePassword } from './UpdatePassword';
 
 export default function UpdatePasswordPage() {
-  return <UpdatePassword/>;
+  return <UpdatePassword />;
 }

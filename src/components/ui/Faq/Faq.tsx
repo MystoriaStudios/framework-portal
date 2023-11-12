@@ -1,10 +1,10 @@
-"use client"
-import React, {useState} from "react";
-import {H1} from "@/components/ui/Typography/H1";
-import {H4} from "@/components/ui/Typography/H4";
-import {P} from "@/components/ui/Typography/P";
+'use client';
+import React, { useState } from 'react';
+import { H1 } from '@/components/ui/Typography/H1';
+import { H4 } from '@/components/ui/Typography/H4';
+import { P } from '@/components/ui/Typography/P';
 
-const Item = ({title, children}) => {
+const Item = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -51,8 +51,7 @@ export const Faq = () => {
       <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
         <div className="flex flex-col mb-16 sm:text-center">
           <div className="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl">
-            <h2
-              className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-neutral-900 sm:text-4xl md:mx-auto">
+            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-neutral-900 sm:text-4xl md:mx-auto">
               <span className="relative inline-block">
                 <svg
                   viewBox="0 0 52 24"
@@ -67,7 +66,7 @@ export const Faq = () => {
                       width=".135"
                       height=".30"
                     >
-                      <circle cx="1" cy="1" r=".7"/>
+                      <circle cx="1" cy="1" r=".7" />
                     </pattern>
                   </defs>
                   <rect
@@ -77,7 +76,7 @@ export const Faq = () => {
                   />
                 </svg>
                 <H1>
-                  <span className="relative">Frequently</span>{' '}asked questions
+                  <span className="relative">Frequently</span> asked questions
                 </H1>
               </span>
             </h2>
@@ -88,8 +87,9 @@ export const Faq = () => {
         </div>
         <div className="space-y-4">
           <Item title="Why should i use Framework?">
-            We provide a stable product that is able to scale to whatever you may require. We support lots of major
-            server environments and you can deploy your own network in a matter of minutes!
+            We provide a stable product that is able to scale to whatever you
+            may require. We support lots of major server environments and you
+            can deploy your own network in a matter of minutes!
           </Item>
           <Item title="Why is emily a faggot?">
             nobody knowws sshe just is stbh

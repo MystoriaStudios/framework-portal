@@ -1,8 +1,14 @@
 'use server';
 
-import {createSupabaseServerActionClient} from '@/supabase-clients/createSupabaseServerActionClient';
-import {deleteItem, getAllItems, getItem, insertItem, updateItem,} from '@/utils/supabase-queries';
-import {revalidatePath} from 'next/cache';
+import { createSupabaseServerActionClient } from '@/supabase-clients/createSupabaseServerActionClient';
+import {
+  deleteItem,
+  getAllItems,
+  getItem,
+  insertItem,
+  updateItem,
+} from '@/utils/supabase-queries';
+import { revalidatePath } from 'next/cache';
 
 export async function insertItemAction(payload: {
   name: string;

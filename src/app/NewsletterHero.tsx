@@ -1,6 +1,6 @@
-import {CalendarDaysIcon, HandRaisedIcon} from '@heroicons/react/24/outline'
-import React from "react";
-import {H2} from "@/components/ui/Typography/H2";
+import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline';
+import React from 'react';
+import { H2 } from '@/components/ui/Typography/H2';
 
 export default function NewsletterHero() {
   return (
@@ -10,8 +10,9 @@ export default function NewsletterHero() {
           <div className="max-w-xl lg:max-w-lg">
             <H2>Subscribe to our blog.</H2>
             <p className="mt-4 text-lg leading-8 text-neutral-300">
-              When we release a new update or have something to share with everyone we make a post on our blog you can
-              subscribe to our blog or join our discord below to always be informed.
+              When we release a new update or have something to share with
+              everyone we make a post on our blog you can subscribe to our blog
+              or join our discord below to always be informed.
             </p>
             <div className="mt-6 flex max-w-md gap-x-4">
               <label htmlFor="email-address" className="sr-only">
@@ -37,25 +38,35 @@ export default function NewsletterHero() {
           <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
             <div className="flex flex-col items-start">
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
-                <CalendarDaysIcon className="h-6 w-6 text-neutral-800" aria-hidden="true"/>
+                <CalendarDaysIcon
+                  className="h-6 w-6 text-neutral-800"
+                  aria-hidden="true"
+                />
               </div>
-              <dt className="mt-4 font-semibold text-neutral-800">Weekly articles</dt>
+              <dt className="mt-4 font-semibold text-neutral-800">
+                Weekly articles
+              </dt>
               <dd className="mt-2 leading-7 text-neutral-400">
-                Non laboris consequat cupidatat laborum magna. Eiusmod non irure cupidatat duis commodo amet.
+                Non laboris consequat cupidatat laborum magna. Eiusmod non irure
+                cupidatat duis commodo amet.
               </dd>
             </div>
             <div className="flex flex-col items-start">
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
-                <HandRaisedIcon className="h-6 w-6 text-neutral-800" aria-hidden="true"/>
+                <HandRaisedIcon
+                  className="h-6 w-6 text-neutral-800"
+                  aria-hidden="true"
+                />
               </div>
               <dt className="mt-4 font-semibold text-neutral-800">No spam</dt>
               <dd className="mt-2 leading-7 text-neutral-400">
-                Officia excepteur ullamco ut sint duis proident non adipisicing. Voluptate incididunt anim.
+                Officia excepteur ullamco ut sint duis proident non adipisicing.
+                Voluptate incididunt anim.
               </dd>
             </div>
           </dl>
         </div>
       </div>
     </div>
-  )
+  );
 }

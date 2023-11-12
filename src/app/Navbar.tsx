@@ -1,12 +1,12 @@
-'use client'
-import {cn} from '@/utils/cn'
+'use client';
+import { cn } from '@/utils/cn';
 import Link from 'next/link';
-import React, {Suspense, useEffect, useState} from 'react';
-import {MobileNavigation} from './MobileNavigation';
-import {NavLink} from './NavLink';
+import React, { Suspense, useEffect, useState } from 'react';
+import { MobileNavigation } from './MobileNavigation';
+import { NavLink } from './NavLink';
 // next dynamic
 import dynamic from 'next/dynamic';
-import {usePathname} from "next/navigation";
+import { usePathname } from 'next/navigation';
 
 const DynamicAuthNavLink = dynamic(
   () => import('./AuthNavLink').then((module) => module.AuthNavLink),
@@ -41,7 +41,7 @@ export function Navbar() {
     }
 
     onScroll();
-    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', onScroll);
     };
@@ -76,7 +76,11 @@ export function Navbar() {
             'relative '
           )}
         >
-          <Link className="text-4xl px-2 font-bold" href="/" aria-label="Home page">
+          <Link
+            className="text-4xl px-2 font-bold"
+            href="/"
+            aria-label="Home page"
+          >
             <img
               src={'/assets/logo.svg'}
               className="h-9 block sm:h-9"
@@ -93,13 +97,13 @@ export function Navbar() {
             Marketplace
           </NavLink>
           <Suspense fallback={<div> Loading ... </div>}>
-            <DynamicAuthNavLink/>
+            <DynamicAuthNavLink />
           </Suspense>
 
           <div className="ml-auto w-full">
-            <div className={""}>
+            <div className={''}>
               <Suspense fallback={<div> Loading ... </div>}>
-                <DynamicNavHero/>
+                <DynamicNavHero />
               </Suspense>
             </div>
           </div>
@@ -108,9 +112,7 @@ export function Navbar() {
         <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow"></div>
       </div>
 
-      <div>
-        {pathname}
-      </div>
+      <div>{pathname}</div>
     </header>
   );
 }

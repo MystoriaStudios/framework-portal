@@ -1,8 +1,13 @@
 'use server';
 
-import {createSupabaseServerActionClient} from '@/supabase-clients/createSupabaseServerActionClient';
-import {deleteOrganization, getOrganization, insertOrganization, updateOrganization,} from '@/utils/supabase-queries';
-import {revalidatePath} from 'next/cache';
+import { createSupabaseServerActionClient } from '@/supabase-clients/createSupabaseServerActionClient';
+import {
+  deleteOrganization,
+  getOrganization,
+  insertOrganization,
+  updateOrganization,
+} from '@/utils/supabase-queries';
+import { revalidatePath } from 'next/cache';
 
 export async function insertOrganizationAction(payload: {
   name: string;

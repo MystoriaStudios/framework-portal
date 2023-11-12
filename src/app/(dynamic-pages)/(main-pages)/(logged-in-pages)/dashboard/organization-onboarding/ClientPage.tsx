@@ -1,23 +1,21 @@
 'use client';
 
-import {Button} from '@/components/ui/button';
-import {useMutation, useQueryClient} from '@tanstack/react-query';
-import {useRouter} from 'next/navigation';
-import {useRef, useState} from 'react';
-import {toast} from 'react-hot-toast';
+import { Button } from '@/components/ui/button';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useRouter } from 'next/navigation';
+import { useRef, useState } from 'react';
+import { toast } from 'react-hot-toast';
 
 export const ClientPage = ({
-                             insertItemAction,
-                           }: {
-  insertItemAction: (item: {
-    name: string;
-  }) => Promise<string>;
+  insertItemAction,
+}: {
+  insertItemAction: (item: { name: string }) => Promise<string>;
 }) => {
   const router = useRouter();
   const queryClient = useQueryClient();
   const toastRef = useRef<string | null>(null);
 
-  const {mutate} = useMutation(
+  const { mutate } = useMutation(
     async (item: { name: string }) => {
       return insertItemAction(item);
     },
@@ -28,14 +26,14 @@ export const ClientPage = ({
       },
 
       onSuccess: (newItemId) => {
-        toast.success('Organization created', {id: toastRef.current});
+        toast.success('Organization created', { id: toastRef.current });
         toastRef.current = null;
         router.refresh();
         queryClient.invalidateQueries(['organizations']);
         router.push(`/dashboard/${newItemId}`);
       },
       onError: () => {
-        toast.error('Failed to create organization', {id: toastRef.current});
+        toast.error('Failed to create organization', { id: toastRef.current });
         toastRef.current = null;
       },
     }
@@ -49,7 +47,7 @@ export const ClientPage = ({
         const formData = new FormData(event.target as HTMLFormElement);
         //TODO: do better validation 🤷‍♂️
         const name = formData.get('name') as string;
-        mutate({name});
+        mutate({ name });
       }}
     >
       <div>

@@ -1,17 +1,18 @@
 'use client';
-import {cn} from '@/utils/cn';
+import { cn } from '@/utils/cn';
 import Link from 'next/link';
-import {usePathname} from 'next/navigation';
-import {ComponentProps} from 'react';
+import { usePathname } from 'next/navigation';
+import { ComponentProps } from 'react';
 
 export function NavLink({
-                          href,
-                          ...props
-                        }: {
+  href,
+  ...props
+}: {
   href: string;
 } & ComponentProps<typeof Link>) {
   const pathname = usePathname();
-  const isActive = href == "/" ? pathname == href : pathname.includes(href.substring(1))
+  const isActive =
+    href == '/' ? pathname == href : pathname.includes(href.substring(1));
   return (
     <Link
       {...props}

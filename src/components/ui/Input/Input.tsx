@@ -1,10 +1,10 @@
-import {cn} from '@/utils/cn';
+import { cn } from '@/utils/cn';
 import * as React from 'react';
 
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({className, ...props}, ref) => {
+  ({ className, ...props }, ref) => {
     return (
       <input
         className={cn(
@@ -19,4 +19,4 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 );
 Input.displayName = 'Input';
 
-export {Input};
+export { Input };

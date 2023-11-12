@@ -1,11 +1,11 @@
 'use client';
 
-import {ReactNode, useEffect} from 'react';
+import { ReactNode, useEffect } from 'react';
 import Image from 'next/image';
-import {useRouter} from 'next/navigation';
-import {T} from '@/components/ui/Typography';
+import { useRouter } from 'next/navigation';
+import { T } from '@/components/ui/Typography';
 
-export function ClientLayout({children}: { children: ReactNode }) {
+export function ClientLayout({ children }: { children: ReactNode }) {
   const router = useRouter();
   useEffect(() => {
     router.prefetch('/dashboard');

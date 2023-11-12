@@ -1,16 +1,16 @@
-import {useState} from 'react';
-import {Button} from '../ui/button';
-import {Label} from '@/components/ui/label';
-import {classNames} from '@/utils/classNames';
-import {T} from '@/components/ui/Typography';
+import { useState } from 'react';
+import { Button } from '../ui/button';
+import { Label } from '@/components/ui/label';
+import { classNames } from '@/utils/classNames';
+import { T } from '@/components/ui/Typography';
 
 export const Password = ({
-                           onSubmit,
-                           isLoading,
-                           successMessage,
-                           label = 'Password',
-                           buttonLabel = 'Update',
-                         }: {
+  onSubmit,
+  isLoading,
+  successMessage,
+  label = 'Password',
+  buttonLabel = 'Update',
+}: {
   onSubmit: (password: string) => void;
   isLoading: boolean;
   successMessage?: string;

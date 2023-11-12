@@ -1,5 +1,5 @@
-import {SignUp} from './Signup';
+import { SignUp } from './Signup';
 
 export default function SignupPage() {
-  return <SignUp/>;
+  return <SignUp />;
 }

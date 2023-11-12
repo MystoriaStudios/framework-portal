@@ -29,5 +29,5 @@ export function createSuspenseResource<T>(promise: Promise<T>): Resource<T> {
     }
   };
 
-  return {read};
+  return { read };
 }

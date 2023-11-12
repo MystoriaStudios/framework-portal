@@ -1,23 +1,23 @@
 'use client';
 
-import {useEffect} from 'react'
-import {H1} from "@/components/ui/Typography/H1";
-import {H2} from "@/components/ui/Typography/H2";
-import {faHome} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {P} from "@/components/ui/Typography/P";
+import { useEffect } from 'react';
+import { H1 } from '@/components/ui/Typography/H1';
+import { H2 } from '@/components/ui/Typography/H2';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { P } from '@/components/ui/Typography/P';
 
 export default function NotFound({
-                                   error,
-                                   reset,
-                                 }: {
-  error: Error & { digest?: string }
-  reset: () => void
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string };
+  reset: () => void;
 }) {
   useEffect(() => {
     // Log the error to an error reporting service
-    console.error(error)
-  }, [error])
+    console.error(error);
+  }, [error]);
 
   return (
     <div className="grid min-h-full place-items-center px-6 py-24 sm:py-32 lg:px-8">
@@ -38,5 +38,5 @@ export default function NotFound({
         </div>
       </div>
     </div>
-  )
+  );
 }

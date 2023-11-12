@@ -1,14 +1,14 @@
-import {classNames} from '@/utils/classNames';
-import {useState} from 'react';
-import {Button} from '@/components/ui/button';
-import {Label} from '@/components/ui/label';
+import { classNames } from '@/utils/classNames';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
 import Link from 'next/link';
 
 export const EmailAndPassword = ({
-                                   onSubmit,
-                                   view,
-                                   isLoading,
-                                 }: {
+  onSubmit,
+  view,
+  isLoading,
+}: {
   onSubmit: (data: { email: string; password: string }) => void;
   view: 'sign-in' | 'sign-up';
   isLoading: boolean;
