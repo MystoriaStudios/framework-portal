@@ -1,10 +1,10 @@
 'use client';
-import {Table} from '@/types';
+import { Table } from '@/types';
 import Link from 'next/link';
 import React from 'react';
-import {H4} from '@/components/ui/Typography/H4';
+import { H4 } from '@/components/ui/Typography/H4';
 
-export const BlogHero = ({items}: { items: Table<'items'>[] }) => {
+export const BlogHero = ({ items }: { items: Table<'items'>[] }) => {
   return (
     <div className="mt-8 md:w-1/2 lg:w-2/3 mx-auto">
       {items.length ? (
@@ -28,8 +28,7 @@ export const BlogHero = ({items}: { items: Table<'items'>[] }) => {
                 <time dateTime={item.created_at} className="text-neutral-500">
                   {item.created_at}
                 </time>
-                <div
-                  className="relative z-10 rounded-full bg-neutral-50 px-3 py-1.5 font-medium text-neutral-600 hover:bg-neutral-100">
+                <div className="relative z-10 rounded-full bg-neutral-50 px-3 py-1.5 font-medium text-neutral-600 hover:bg-neutral-100">
                   {item.id.substring(0, 8)}
                 </div>
               </div>

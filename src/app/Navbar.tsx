@@ -1,12 +1,12 @@
 'use client';
-import {cn} from '@/utils/cn';
+import { cn } from '@/utils/cn';
 import Link from 'next/link';
-import React, {Suspense, useEffect, useState} from 'react';
-import {MobileNavigation} from './MobileNavigation';
-import {NavLink} from './NavLink';
+import React, { Suspense, useEffect, useState } from 'react';
+import { MobileNavigation } from './MobileNavigation';
+import { NavLink } from './NavLink';
 // next dynamic
 import dynamic from 'next/dynamic';
-import {usePathname} from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 const DynamicAuthNavLink = dynamic(
   () => import('./AuthNavLink').then((module) => module.AuthNavLink),
@@ -41,7 +41,7 @@ export function Navbar() {
     }
 
     onScroll();
-    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', onScroll);
     };
@@ -57,7 +57,7 @@ export function Navbar() {
       )}
     >
       <div className="mr-6 flex lg:hidden space-x-2">
-        <MobileNavigation/>
+        <MobileNavigation />
         <div className={cn('block lg:hidden', 'relative ')}>
           <Link href="/" className="block" aria-label="Home page">
             <img
@@ -97,13 +97,13 @@ export function Navbar() {
             Marketplace
           </NavLink>
           <Suspense fallback={<div> Loading ... </div>}>
-            <DynamicAuthNavLink/>
+            <DynamicAuthNavLink />
           </Suspense>
 
           <div className="ml-auto w-full">
             <div className={'ml-auto'}>
               <Suspense fallback={<div> Loading ... </div>}>
-                <DynamicNavHero/>
+                <DynamicNavHero />
               </Suspense>
             </div>
           </div>

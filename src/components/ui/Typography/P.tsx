@@ -1,7 +1,7 @@
-import {cn} from '@/utils/cn';
-import {ComponentProps} from 'react';
+import { cn } from '@/utils/cn';
+import { ComponentProps } from 'react';
 
-export function P({className, ...rest}: ComponentProps<'p'>) {
+export function P({ className, ...rest }: ComponentProps<'p'>) {
   const classNames = cn(
     'leading-7 dark:text-white',
     '&:not(:first-child):mt-6',

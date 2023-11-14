@@ -1,5 +1,5 @@
 'use client';
-import {Button} from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -9,10 +9,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/Dialog';
-import {useMutation} from '@tanstack/react-query';
-import {useRouter} from 'next/navigation';
-import {useRef, useState} from 'react';
-import {toast} from 'react-hot-toast';
+import { useMutation } from '@tanstack/react-query';
+import { useRouter } from 'next/navigation';
+import { useRef, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import Trash from 'lucide-react/dist/esm/icons/trash';
 
 type Props = {
@@ -21,13 +21,13 @@ type Props = {
 };
 
 export const ConfirmDeleteItemDialog = ({
-                                          itemId,
-                                          deleteItemAction,
-                                        }: Props) => {
+  itemId,
+  deleteItemAction,
+}: Props) => {
   const [open, setOpen] = useState(false);
   const toastRef = useRef<string | null>(null);
   const router = useRouter();
-  const {mutate, isLoading} = useMutation(
+  const { mutate, isLoading } = useMutation(
     async (id: string) => {
       return deleteItemAction(id);
     },
@@ -37,13 +37,13 @@ export const ConfirmDeleteItemDialog = ({
         toastRef.current = toastId;
       },
       onSuccess: () => {
-        toast.success('Item deleted', {id: toastRef.current});
+        toast.success('Item deleted', { id: toastRef.current });
         toastRef.current = null;
         router.refresh();
         router.push('/');
       },
       onError: () => {
-        toast.error('Failed to delete item', {id: toastRef.current});
+        toast.error('Failed to delete item', { id: toastRef.current });
         toastRef.current = null;
       },
       onSettled: () => {
@@ -55,7 +55,7 @@ export const ConfirmDeleteItemDialog = ({
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button variant="outline">
-          <Trash className="mr-1"/> Delete Item
+          <Trash className="mr-1" /> Delete Item
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">

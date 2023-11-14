@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import {P} from '@/components/ui/Typography/P';
+import { P } from '@/components/ui/Typography/P';
 import React from 'react';
 
 export default function Footer() {

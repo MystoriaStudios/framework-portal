@@ -9,9 +9,10 @@ export const PieChart = (props) => {
   return (
     <div className={'mt-4'}>
       <Pie
-        className={'tracking-widest'}
+        className={'tracking-widest h-fit relative bottom-0'}
         {...props}
         options={{
+          maintainAspectRatio: false,
           responsive: true,
           borderColor: 'transparent',
           plugins: {
@@ -21,9 +22,13 @@ export const PieChart = (props) => {
             datalabels: {
               formatter: (value, ctx) => {
                 const datapoints = ctx.chart.data.datasets[0].data;
-                const total = datapoints.reduce(
-                  (total, datapoint) => total + datapoint,
-                  0
+                const total = Number.parseInt(
+                  datapoints
+                    .reduce(
+                      (total: number, datapoint: number) => total + datapoint,
+                      0
+                    )
+                    .toString()
                 );
                 const percentage = (value / total) * 100;
                 return percentage.toFixed(2).split('.')[0] + '%';
@@ -42,15 +47,12 @@ export const PieChart = (props) => {
                 pointStyle: 'circle',
                 usePointStyle: true,
                 padding: 20,
-                color: '#fff',
                 font: {
                   family: 'MonaspaceKrypton',
                   weight: 800,
                 },
               },
             },
-            maintainAspectRatio: false,
-            responsive: true,
           },
         }}
       />

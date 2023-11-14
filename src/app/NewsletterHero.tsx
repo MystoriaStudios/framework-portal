@@ -1,6 +1,6 @@
-import {CalendarDaysIcon, HandRaisedIcon} from '@heroicons/react/24/outline';
+import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline';
 import React from 'react';
-import {H2} from '@/components/ui/Typography/H2';
+import { H2 } from '@/components/ui/Typography/H2';
 
 export default function NewsletterHero() {
   return (
@@ -47,7 +47,9 @@ export default function NewsletterHero() {
                 Weekly articles
               </dt>
               <dd className="mt-2 leading-7 text-neutral-400">
-                Stay tuned for our latest weekly articles. Our content is curated to bring you insights and information that will help you succeed.
+                Stay tuned for our latest weekly articles. Our content is
+                curated to bring you insights and information that will help you
+                succeed.
               </dd>
             </div>
             <div className="flex flex-col items-start">
@@ -59,7 +61,8 @@ export default function NewsletterHero() {
               </div>
               <dt className="mt-4 font-semibold text-neutral-800">No spam</dt>
               <dd className="mt-2 leading-7 text-neutral-400">
-                Your inbox is safe with us. We don't believe in spam. Expect only valuable content without the hassle.
+                Your inbox is safe with us. We don't believe in spam. Expect
+                only valuable content without the hassle.
               </dd>
             </div>
           </dl>

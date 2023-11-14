@@ -1,10 +1,10 @@
 'use client';
 
-import {supabaseUserClientComponentClient} from '@/supabase-clients/supabaseUserClientComponentClient';
-import {createSuspenseResource} from '@/utils/createSuspenseResource';
-import {User} from '@supabase/supabase-js';
+import { supabaseUserClientComponentClient } from '@/supabase-clients/supabaseUserClientComponentClient';
+import { createSuspenseResource } from '@/utils/createSuspenseResource';
+import { User } from '@supabase/supabase-js';
 
-import {NavLink} from './NavLink';
+import { NavLink } from './NavLink';
 import NavTheme from '@/app/NavTheme';
 import React from 'react';
 
@@ -14,7 +14,7 @@ import React from 'react';
 const userResource = createSuspenseResource<User | null>(
   supabaseUserClientComponentClient.auth
     .getUser()
-    .then(({data}) => data?.user ?? null)
+    .then(({ data }) => data?.user ?? null)
 );
 
 export function NavHero() {
@@ -37,7 +37,7 @@ export function NavHero() {
         </span>
       )}
 
-      <NavTheme/>
+      <NavTheme />
     </div>
   );
 }

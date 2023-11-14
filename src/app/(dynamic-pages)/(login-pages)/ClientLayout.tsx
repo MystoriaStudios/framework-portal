@@ -1,11 +1,10 @@
 'use client';
 
-import {ReactNode, useEffect} from 'react';
-import Image from 'next/image';
-import {useRouter} from 'next/navigation';
-import {T} from '@/components/ui/Typography';
+import { ReactNode, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { T } from '@/components/ui/Typography';
 
-export function ClientLayout({children}: { children: ReactNode }) {
+export function ClientLayout({ children }: { children: ReactNode }) {
   const router = useRouter();
   useEffect(() => {
     router.prefetch('/dashboard');
@@ -30,7 +29,6 @@ export function ClientLayout({children}: { children: ReactNode }) {
             // style={{ backgroundImage: `url(${LoginBackgroundLight.src})` }}
           >
             <div className="ml-6 space-y-8">
-
               <div className=" w-[640px]">
                 <T.H3 className=" tracking-tight">
                   <p className="text-6xl -ml-4 mb-0 leading-none">＂</p>

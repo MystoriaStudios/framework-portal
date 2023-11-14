@@ -1,5 +1,5 @@
-import {H1} from "@/components/ui/Typography/H1";
-import TermsPage from "./TermsPage";
+import { H1 } from '@/components/ui/Typography/H1';
+import TermsPage from './TermsPage';
 
 export default function Terms() {
   return (
@@ -9,5 +9,5 @@ export default function Terms() {
 
       <TermsPage></TermsPage>
     </>
-  )
+  );
 }

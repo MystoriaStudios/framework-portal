@@ -6,16 +6,24 @@ import { H4 } from '@/components/ui/Typography/H4';
 import { P } from '@/components/ui/Typography/P';
 import Link from 'next/link';
 import { faAdd, faUserAlt } from '@fortawesome/free-solid-svg-icons';
-import { createSupabaseStaticClient } from '@/supabase-clients/createSupabaseStaticClient';
 import { getOrganizations } from '@/utils/supabase-queries';
-import { H3 } from '@/components/ui/Typography/H3';
-import {H1} from "@/components/ui/Typography/H1";
-import React from "react";
+import { H1 } from '@/components/ui/Typography/H1';
+import React, { useEffect, useState } from 'react';
+import { createSupabaseStaticClient } from '@/supabase-clients/createSupabaseStaticClient';
 
-export default async function Dashboard() {
+export default function Dashboard() {
   const supabaseClient = createSupabaseStaticClient();
-  const data = await getOrganizations(supabaseClient);
+  const [organizations, setOrganizations] = useState(undefined);
 
+  useEffect(() => {
+    const fetch = async () => {
+      const data: any = await getOrganizations(supabaseClient);
+
+      setOrganizations(data);
+    };
+
+    fetch();
+  });
   return (
     <div className={'md:w-3/4 mx-auto'}>
       <H1 className={'xl:mx-20 xl:mb-8 xl:mt-12'}>Choose a dashboard</H1>
@@ -24,14 +32,13 @@ export default async function Dashboard() {
           'xl:m-20 border-neutral-300 dark:border-neutral-900 rounded-lg border-2 border-dashed'
         }
       >
-
-        {data && data.length > 0 ? (
-          <div className={'grid grid-cols-4'}>
-            {data.map((organization) => (
+        {organizations && organizations.length > 0 ? (
+          <div className={'grid grid-cols-3'}>
+            {organizations.map((organization) => (
               <Link
                 key={organization.id}
                 href={`/dashboard/${organization.id}`}
-                className="m-4 border-rose-800 border-2 rounded-2xl p-3"
+                className="m-4 border-rose-800 odd:border-amber-500 border-2 rounded-2xl p-3"
               >
                 <H4>{organization.name}</H4>
                 <hr />

@@ -1,5 +1,5 @@
 import React from 'react';
-import {H1} from '@/components/ui/Typography/H1';
+import { H1 } from '@/components/ui/Typography/H1';
 
 export const dynamic = 'force-dynamic';
 

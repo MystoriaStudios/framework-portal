@@ -1,16 +1,16 @@
 'use client';
 
-import {useEffect} from 'react';
-import {H1} from '@/components/ui/Typography/H1';
-import {H2} from '@/components/ui/Typography/H2';
-import {faHome} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {P} from '@/components/ui/Typography/P';
+import { useEffect } from 'react';
+import { H1 } from '@/components/ui/Typography/H1';
+import { H2 } from '@/components/ui/Typography/H2';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { P } from '@/components/ui/Typography/P';
 
 export default function NotFound({
-                                   error,
-                                   reset,
-                                 }: {
+  error,
+  reset,
+}: {
   error: Error & { digest?: string };
   reset: () => void;
 }) {
