@@ -30,6 +30,30 @@ export interface Database {
         }
         Relationships: []
       }
+      organizations: {
+        Row: {
+          created_at: string
+          director: string
+          id: number
+          members: Json | null
+          name: string | null
+        }
+        Insert: {
+          created_at?: string
+          director?: string
+          id?: number
+          members?: Json | null
+          name?: string | null
+        }
+        Update: {
+          created_at?: string
+          director?: string
+          id?: number
+          members?: Json | null
+          name?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

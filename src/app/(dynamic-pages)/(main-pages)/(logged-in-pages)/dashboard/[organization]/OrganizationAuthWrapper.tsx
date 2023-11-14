@@ -16,7 +16,7 @@ export default function OrganizationAuthWrapper({ id, children }) {
 
   useEffect(() => {
     const fetch = async () => {
-      const data: any = await getOrganization(supabaseClient, organization_id);
+      const data = await getOrganization(supabaseClient, organization_id);
 
       setOrganization(data);
     };

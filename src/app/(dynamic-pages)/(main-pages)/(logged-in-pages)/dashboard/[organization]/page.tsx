@@ -11,22 +11,22 @@ export default function Dashboard() {
           <div className="col-span-12 lg:col-span-4 p-2 bg-neutral-100 dark:bg-neutral-900 shadow rounded-2xl">
             <H4 className="mx-4">Player Info</H4>
             <div className="grid grid-cols-2 gap-4 my-auto mt-2">
-              <div className="bg-rose-800 p-2 text-white uppercase text-center font-extrabold rounded-lg">
-                <span className="text-xs tracking-widest">Current</span>
+              <div className="bg-rose-800 p-2 text-white text-center font-extrabold rounded-lg">
+                <span className="text-xs tracking-widest uppercase">Current</span>
                 <H1>65</H1>
               </div>
 
-              <div className="bg-amber-500 p-2 text-white uppercase text-center font-extrabold rounded-lg">
-                <span className="text-xs tracking-widest">Todays Peek</span>
+              <div className="bg-amber-500 p-2 text-white text-center font-extrabold rounded-lg">
+                <span className="text-xs tracking-widest uppercase">Todays Peek</span>
                 <H1>200</H1>
               </div>
-              <div className="bg-amber-500 p-2 text-white uppercase text-center font-extrabold rounded-lg">
-                <span className="text-xs tracking-widest">Average Session</span>
+              <div className="bg-amber-500 p-2 text-white text-center font-extrabold rounded-lg">
+                <span className="text-xs tracking-widest uppercase">Average Session</span>
                 <H1>1h45m</H1>
               </div>
 
-              <div className="bg-rose-800 p-2 text-white uppercase text-center font-extrabold rounded-lg">
-                <span className="text-xs tracking-widest">All time peek</span>
+              <div className="bg-rose-800 p-2 text-white text-center font-extrabold rounded-lg">
+                <span className="text-xs tracking-widest uppercase">All time peek</span>
                 <H1>5832</H1>
               </div>
             </div>
