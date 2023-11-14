@@ -30,14 +30,6 @@ export function ClientLayout({children}: { children: ReactNode }) {
             // style={{ backgroundImage: `url(${LoginBackgroundLight.src})` }}
           >
             <div className="ml-6 space-y-8">
-              <div>
-                <Image
-                  width="600"
-                  src={'/assets/login-asset-dashboard.png'}
-                  height="450"
-                  alt="Login Header"
-                />
-              </div>
 
               <div className=" w-[640px]">
                 <T.H3 className=" tracking-tight">

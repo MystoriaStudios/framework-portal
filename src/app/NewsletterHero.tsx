@@ -39,7 +39,7 @@ export default function NewsletterHero() {
             <div className="flex flex-col items-start">
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
                 <CalendarDaysIcon
-                  className="h-6 w-6 text-neutral-800"
+                  className="h-6 w-6 text-neutral-500"
                   aria-hidden="true"
                 />
               </div>
@@ -53,7 +53,7 @@ export default function NewsletterHero() {
             <div className="flex flex-col items-start">
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
                 <HandRaisedIcon
-                  className="h-6 w-6 text-neutral-800"
+                  className="h-6 w-6 text-neutral-500"
                   aria-hidden="true"
                 />
               </div>

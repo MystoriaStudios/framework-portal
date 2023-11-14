@@ -29,6 +29,7 @@ export default async function Dashboard() {
           <div className={'grid grid-cols-4'}>
             {data.map((organization) => (
               <Link
+                key={organization.id}
                 href={`/dashboard/${organization.id}`}
                 className="m-4 border-rose-800 border-2 rounded-2xl p-3"
               >
