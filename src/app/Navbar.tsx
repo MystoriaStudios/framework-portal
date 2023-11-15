@@ -50,7 +50,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'transition transition-all duration-400 sticky top-0 z-50 flex flex-wrap items-center justify-between bg-transparent px-1 py-2 shadow-md shadow-neutral-900/5 transition duration-500 dark:shadow-none sm:px-3 lg:px-4',
+        'z-50 transition transition-all duration-400 sticky top-0 z-50 flex flex-wrap items-center justify-between bg-transparent px-1 py-2 shadow-md shadow-neutral-900/5 transition duration-500 dark:shadow-none sm:px-3 lg:px-4',
         isScrolled
           ? ' dark:bg-neutral-900/95 backdrop-blur [@supports(backdrop-filter:blur(0))]:bg-neutral-900/75 [@supports(backdrop-filter:blur(0))]:bg-white/75'
           : 'bg-transparent'

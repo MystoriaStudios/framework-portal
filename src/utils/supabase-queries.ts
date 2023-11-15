@@ -144,6 +144,19 @@ export const getOrganizations = async (
   return data;
 };
 
+
+export const getDeployments = async (
+  supabase: AppSupabaseClient
+): Promise<Array<Table<'deployments'>>> => {
+  const { data, error } = await supabase.from('deployments').select('*');
+
+  if (error) {
+    throw error;
+  }
+
+  return data;
+};
+
 export const signInWithMagicLink = async (
   supabase: AppSupabaseClient,
   email: string

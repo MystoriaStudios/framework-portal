@@ -3,11 +3,12 @@ import { Table } from '@/types';
 import Link from 'next/link';
 import React from 'react';
 import { H4 } from '@/components/ui/Typography/H4';
+import {P} from "@/components/ui/Typography/P";
 
 export const BlogHero = ({ posts }: { posts: Table<'posts'>[] }) => {
   return (
     <div className="mt-8 md:w-1/2 lg:w-2/3 mx-auto">
-      {posts.length ? (
+      {posts && posts.length ? (
         <div
           className={'grid lg:grid-cols-2 xl:grid-cols-3 grid-span-row gap-4'}
         >

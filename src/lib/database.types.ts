@@ -9,26 +9,55 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
-      organizations: {
+      deployments: {
         Row: {
           created_at: string
-          director: string | null
           id: string
-          members: Json | null
-          name: string | null
+          organization: string | null
         }
         Insert: {
           created_at?: string
-          director?: string | null
           id?: string
-          members?: Json | null
-          name?: string | null
+          organization?: string | null
         }
         Update: {
           created_at?: string
+          id?: string
+          organization?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "deployments_organization_fkey"
+            columns: ["organization"]
+            isOneToOne: false
+            referencedRelation: "organizations"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      organizations: {
+        Row: {
+          api_key: string | null
+          created_at: string
+          director: string | null
+          id: string
+          members: string[] | null
+          name: string | null
+        }
+        Insert: {
+          api_key?: string | null
+          created_at?: string
           director?: string | null
           id?: string
-          members?: Json | null
+          members?: string[] | null
+          name?: string | null
+        }
+        Update: {
+          api_key?: string | null
+          created_at?: string
+          director?: string | null
+          id?: string
+          members?: string[] | null
           name?: string | null
         }
         Relationships: []
@@ -70,7 +99,10 @@ export interface Database {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_organization_from_api_key: {
+        Args: Record<PropertyKey, never>
+        Returns: string
+      }
     }
     Enums: {
       [_ in never]: never
