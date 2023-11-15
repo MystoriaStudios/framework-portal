@@ -4,17 +4,17 @@ import Link from 'next/link';
 import React from 'react';
 import { H4 } from '@/components/ui/Typography/H4';
 
-export const BlogHero = ({ items }: { items: Table<'items'>[] }) => {
+export const BlogHero = ({ posts }: { posts: Table<'posts'>[] }) => {
   return (
     <div className="mt-8 md:w-1/2 lg:w-2/3 mx-auto">
-      {items.length ? (
+      {posts.length ? (
         <div
           className={'grid lg:grid-cols-2 xl:grid-cols-3 grid-span-row gap-4'}
         >
-          {items.map((item) => (
+          {posts.map((item) => (
             <article
               key={item.id}
-              className="flex max-w-xl flex-col items-start justify-between shadow rounded-lg"
+              className="flex max-w-xl flex-col posts-start justify-between shadow rounded-lg"
             >
               <img
                 width={512}
@@ -24,29 +24,29 @@ export const BlogHero = ({ items }: { items: Table<'items'>[] }) => {
                 }
               />
 
-              <div className="flex items-center gap-x-4 text-xs p-4">
+              <div className="flex posts-center gap-x-4 text-xs p-4">
                 <time dateTime={item.created_at} className="text-neutral-500">
                   {item.created_at}
                 </time>
                 <div className="relative z-10 rounded-full bg-neutral-50 px-3 py-1.5 font-medium text-neutral-600 hover:bg-neutral-100">
-                  {item.id.substring(0, 8)}
+                  {item.id}
                 </div>
               </div>
               <div className="group relative p-4">
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-neutral-900 group-hover:text-neutral-600">
                   <Link href={`/blog/${item.id}`}>
-                    <H4>{item.name}</H4>
+                    <H4>{item.title}</H4>
                   </Link>
                 </h3>
                 <p className="mt-2 line-clamp-3 text-sm leading-6 text-neutral-600">
-                  {item.description}
+                  {item.content}
                 </p>
               </div>
             </article>
           ))}
         </div>
       ) : (
-        <p>No Items</p>
+        <P>No Posts</P>
       )}
     </div>
   );

@@ -24,7 +24,7 @@ export function NavHero() {
     <div className="flex gap-x-4">
       {user ? (
         <span className="flex ml-auto">
-          {user.user_metadata.full_name}
+          {user.user_metadata.full_name || user.user_metadata.email}
           <img
             className="h-6 w-6 rounded-lg ml-2"
             src={user.user_metadata.avatar_url}

@@ -16,20 +16,20 @@ import { toast } from 'react-hot-toast';
 import Trash from 'lucide-react/dist/esm/icons/trash';
 
 type Props = {
-  itemId: string;
-  deleteItemAction: (itemId: string) => Promise<void>;
+  itemId: number;
+  deletePostAction: (itemId: number) => Promise<void>;
 };
 
-export const ConfirmDeleteItemDialog = ({
+export const ConfirmDeletePostDialog = ({
   itemId,
-  deleteItemAction,
+  deletePostAction,
 }: Props) => {
   const [open, setOpen] = useState(false);
   const toastRef = useRef<string | null>(null);
   const router = useRouter();
   const { mutate, isLoading } = useMutation(
-    async (id: string) => {
-      return deleteItemAction(id);
+    async (id: number) => {
+      return deletePostAction(id);
     },
     {
       onMutate: () => {
@@ -37,7 +37,7 @@ export const ConfirmDeleteItemDialog = ({
         toastRef.current = toastId;
       },
       onSuccess: () => {
-        toast.success('Item deleted', { id: toastRef.current });
+        toast.success('Post deleted', { id: toastRef.current });
         toastRef.current = null;
         router.refresh();
         router.push('/');
@@ -55,12 +55,12 @@ export const ConfirmDeleteItemDialog = ({
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button variant="outline">
-          <Trash className="mr-1" /> Delete Item
+          <Trash className="mr-1" /> Delete Post
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Delete Item</DialogTitle>
+          <DialogTitle>Delete Post</DialogTitle>
           <DialogDescription>
             Are you sure you want to delete this item?
           </DialogDescription>

@@ -1,5 +1,5 @@
 import { AppSupabaseClient } from '@/types';
-import { getAllItems } from '@/utils/supabase-queries';
+import { getAllPosts } from '@/utils/supabase-queries';
 import { createSupabaseServerComponentClient } from '@/supabase-clients/createSupabaseServerComponentClient';
 import React from 'react';
 import { H1 } from '@/components/ui/Typography/H1';
@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { H4 } from '@/components/ui/Typography/H4';
 
 async function fetchData(supabaseClient: AppSupabaseClient) {
-  const [items] = await Promise.all([getAllItems(supabaseClient)]);
+  const [items] = await Promise.all([getAllPosts(supabaseClient)]);
   return {
     items: items,
   };
@@ -16,7 +16,7 @@ async function fetchData(supabaseClient: AppSupabaseClient) {
 
 export default async function HomePage() {
   const supabase = createSupabaseServerComponentClient();
-  const { items: initialItems } = await fetchData(supabase);
+  const { items: initialPosts } = await fetchData(supabase);
   return (
     <>
       <div className="space-y-2">
@@ -29,13 +29,13 @@ export default async function HomePage() {
             </P>
           </div>
 
-          {initialItems.length ? (
+          {initialPosts.length ? (
             <div
               className={
                 'grid lg:grid-cols-2 xl:grid-cols-3 grid-span-row gap-4'
               }
             >
-              {initialItems.map((item) => (
+              {initialPosts.map((item) => (
                 <article
                   key={item.id}
                   className="flex max-w-xl flex-col items-start justify-between shadow rounded-lg"
@@ -56,24 +56,24 @@ export default async function HomePage() {
                       {item.created_at}
                     </time>
                     <div className="relative z-10 rounded-full bg-neutral-50 px-3 py-1.5 font-medium text-neutral-600 hover:bg-neutral-100">
-                      {item.id.substring(0, 8)}
+                      {item.id}
                     </div>
                   </div>
                   <div className="group relative p-4">
                     <h3 className="mt-3 text-lg font-semibold leading-6 text-neutral-900 group-hover:text-neutral-600">
                       <Link href={`/blog/${item.id}`}>
-                        <H4>{item.name}</H4>
+                        <H4>{item.title}</H4>
                       </Link>
                     </h3>
                     <p className="mt-2 line-clamp-3 text-sm leading-6 text-neutral-600">
-                      {item.description}
+                      {item.content}
                     </p>
                   </div>
                 </article>
               ))}
             </div>
           ) : (
-            <p>No Items</p>
+            <p>No Posts</p>
           )}
         </div>
       </div>

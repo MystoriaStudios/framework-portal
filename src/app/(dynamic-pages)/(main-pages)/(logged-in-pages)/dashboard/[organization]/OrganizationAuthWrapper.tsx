@@ -3,7 +3,7 @@ import { notFound, useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { getOrganization } from '@/utils/supabase-queries';
 import Link from 'next/link';
-import { createSupabaseStaticClient } from '@/supabase-clients/createSupabaseStaticClient';
+import {supabaseUserClientComponentClient} from "@/supabase-clients/supabaseUserClientComponentClient";
 
 export default function OrganizationAuthWrapper({ id, children }) {
   const params = useParams();
@@ -11,7 +11,7 @@ export default function OrganizationAuthWrapper({ id, children }) {
   const organization_id = `${params.organization}`;
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  const supabaseClient = createSupabaseStaticClient();
+  const supabaseClient = supabaseUserClientComponentClient;
   const [organization, setOrganization] = useState(undefined);
 
   useEffect(() => {

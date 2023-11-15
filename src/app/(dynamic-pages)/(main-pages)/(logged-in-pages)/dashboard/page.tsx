@@ -9,15 +9,15 @@ import { faAdd, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import { getOrganizations } from '@/utils/supabase-queries';
 import { H1 } from '@/components/ui/Typography/H1';
 import React, { useEffect, useState } from 'react';
-import { createSupabaseStaticClient } from '@/supabase-clients/createSupabaseStaticClient';
+import { supabaseUserClientComponentClient } from '@/supabase-clients/supabaseUserClientComponentClient';
 
 export default function Dashboard() {
-  const supabaseClient = createSupabaseStaticClient();
+  const supabaseClient = supabaseUserClientComponentClient;
   const [organizations, setOrganizations] = useState(undefined);
 
   useEffect(() => {
     const fetch = async () => {
-      const data: any = await getOrganizations(supabaseClient);
+      const data = await getOrganizations(supabaseClient);
 
       setOrganizations(data);
     };
@@ -55,7 +55,7 @@ export default function Dashboard() {
             <div className={'lg:w-2/4 mx-auto text-center'}>
               <div className={'flex flex-col p-4'}>
                 <FontAwesomeIcon
-                  className={'mx-auto text-rose-800 h-12 w-12'}
+                  className={'mx-auto text-rose-800 h-12 w-12 mb-4'}
                   icon={faFolder}
                 ></FontAwesomeIcon>
                 <H4>No organizations</H4>
@@ -66,7 +66,7 @@ export default function Dashboard() {
                 <div className={'px-24 grid grid-cols-2 gap-x-4 mt-12'}>
                   <Link
                     href={'/dashboard/organization-onboarding'}
-                    className="flex w-full justify-center rounded-md bg-rose-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-rose-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600"
+                    className="flex w-full justify-center rounded-md bg-rose-700 px-3 py-1.5 text-xs font-semibold leading-6 text-white shadow-sm hover:bg-rose-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600"
                   >
                     Create{' '}
                     <FontAwesomeIcon
@@ -76,7 +76,7 @@ export default function Dashboard() {
                   </Link>
                   <Link
                     href={'/dashboard/self'}
-                    className="flex w-full justify-center rounded-md bg-rose-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-rose-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600"
+                    className="flex w-full justify-center rounded-md bg-rose-700 px-3 py-1.5 text-xs font-semibold leading-6 text-white shadow-sm hover:bg-rose-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600"
                   >
                     Your Account{' '}
                     <FontAwesomeIcon

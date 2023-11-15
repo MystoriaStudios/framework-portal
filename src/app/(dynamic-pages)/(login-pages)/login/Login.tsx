@@ -2,11 +2,9 @@
 import { RenderProviders } from '@/components/Auth/RenderProviders';
 import { EmailAndPassword } from '@/components/Auth/EmailAndPassword';
 import {
-  useSignInWithMagicLink,
   useSignInWithPassword,
   useSignInWithProvider,
 } from '@/utils/react-query-hooks';
-import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { T } from '@/components/ui/Typography';
 
@@ -17,13 +15,6 @@ export function Login() {
     router.refresh();
     router.push('/auth/callback');
   }
-
-  const [successMessage, setSuccessMessage] = useState<string | null>(null);
-  const magicLinkMutation = useSignInWithMagicLink({
-    onSuccess: () => {
-      setSuccessMessage('A magic link has been sent to your email!');
-    },
-  });
   const passwordMutation = useSignInWithPassword({
     onSuccess: redirectToDashboard,
   });

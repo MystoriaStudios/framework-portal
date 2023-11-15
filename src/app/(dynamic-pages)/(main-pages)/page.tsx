@@ -1,6 +1,6 @@
 import { AppSupabaseClient } from '@/types';
 import { BlogHero } from './BlogHero';
-import { getAllItems } from '@/utils/supabase-queries';
+import { getAllPosts } from '@/utils/supabase-queries';
 import { createSupabaseServerComponentClient } from '@/supabase-clients/createSupabaseServerComponentClient';
 import React from 'react';
 import { H1 } from '@/components/ui/Typography/H1';
@@ -10,7 +10,7 @@ import { H3 } from '@/components/ui/Typography/H3';
 import { Faq } from '@/components/ui/Faq';
 
 async function fetchData(supabaseClient: AppSupabaseClient) {
-  const [items] = await Promise.all([getAllItems(supabaseClient)]);
+  const [items] = await Promise.all([getAllPosts(supabaseClient)]);
   return {
     items: items.slice(0, 3),
   };
@@ -18,7 +18,7 @@ async function fetchData(supabaseClient: AppSupabaseClient) {
 
 export default async function HomePage() {
   const supabase = createSupabaseServerComponentClient();
-  const { items: initialItems } = await fetchData(supabase);
+  const { items: initialPosts } = await fetchData(supabase);
   return (
     <>
       <div className="text-center mt-16">
@@ -29,7 +29,7 @@ export default async function HomePage() {
         </P>
       </div>
       <div className="space-y-2">
-        <BlogHero items={initialItems} />
+        <BlogHero items={initialPosts} />
       </div>
 
       <NewsletterHero />

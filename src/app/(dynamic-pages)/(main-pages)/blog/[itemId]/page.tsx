@@ -1,24 +1,24 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getItem } from '@/utils/supabase-queries';
-import { ConfirmDeleteItemDialog } from './ConfirmDeleteItemDialog';
+import { getPost } from '@/utils/supabase-queries';
+import { ConfirmDeletePostDialog } from './ConfirmDeletePostDialog';
 import { T } from '@/components/ui/Typography';
 import ArrowLeft from 'lucide-react/dist/esm/icons/arrow-left';
 import { createSupabaseServerComponentClient } from '@/supabase-clients/createSupabaseServerComponentClient';
-import { deleteItemAction } from '../../actions';
+import { deletePostAction } from '../../actions';
 
-export default async function Item({
+export default async function Post({
   params,
 }: {
   params: {
-    itemId: string;
+    itemId: number;
   };
 }) {
   const supabaseClient = createSupabaseServerComponentClient();
 
   const { itemId } = params;
   try {
-    const item = await getItem(supabaseClient, itemId);
+    const item = await getPost(supabaseClient, itemId);
     return (
       <div className="space-y-2">
         <div className="space-y-4">
@@ -28,12 +28,12 @@ export default async function Item({
           >
             <ArrowLeft /> <span>View all posts</span>
           </Link>
-          <T.H1>{item.name}</T.H1>
-          <T.Subtle>Description: {item.description}</T.Subtle>
+          <T.H1>{item.title}</T.H1>
+          <T.Subtle>Description: {item.content}</T.Subtle>
         </div>
         <div className="flex">
-          <ConfirmDeleteItemDialog
-            deleteItemAction={deleteItemAction}
+          <ConfirmDeletePostDialog
+            deletePostAction={deletePostAction}
             itemId={itemId}
           />
         </div>

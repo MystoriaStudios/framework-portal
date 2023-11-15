@@ -7,36 +7,36 @@ import { useRef, useState } from 'react';
 import { toast } from 'react-hot-toast';
 
 export const ClientPage = ({
-  insertItemAction,
+  insertPostAction,
 }: {
-  insertItemAction: (item: {
-    name: string;
-    description: string;
-  }) => Promise<string>;
+  insertPostAction: (post: {
+    title: string;
+    content: string;
+  }) => Promise<number>;
 }) => {
   const router = useRouter();
   const queryClient = useQueryClient();
   const toastRef = useRef<string | null>(null);
 
   const { mutate } = useMutation(
-    async (item: { name: string; description: string }) => {
-      return insertItemAction(item);
+    async (post: { title: string; content: string }) => {
+      return insertPostAction(post);
     },
     {
       onMutate: () => {
-        const toastId = toast.loading('Creating item');
+        const toastId = toast.loading('Creating post');
         toastRef.current = toastId;
       },
 
-      onSuccess: (newItemId) => {
-        toast.success('Item created', { id: toastRef.current });
+      onSuccess: (newPostId) => {
+        toast.success('Post created', { id: toastRef.current });
         toastRef.current = null;
         router.refresh();
-        queryClient.invalidateQueries(['items']);
-        router.push(`/blog/${newItemId}`);
+        queryClient.invalidateQueries(['posts']);
+        router.push(`/blog/${newPostId}`);
       },
       onError: () => {
-        toast.error('Failed to create item', { id: toastRef.current });
+        toast.error('Failed to create post', { id: toastRef.current });
         toastRef.current = null;
       },
     }
@@ -50,14 +50,14 @@ export const ClientPage = ({
         event.preventDefault();
         const formData = new FormData(event.target as HTMLFormElement);
         //TODO: do better validation 🤷‍♂️
-        const name = formData.get('name') as string;
-        const description = formData.get('description') as string;
-        mutate({ name, description });
+        const title = formData.get('name') as string;
+        const content = formData.get('description') as string;
+        mutate({ title, content });
       }}
     >
       <div>
         <h1 className="mt-1 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">
-          Create Item
+          Create Post
         </h1>
       </div>
       <div className="space-y-2">
@@ -97,7 +97,7 @@ export const ClientPage = ({
         />
       </div>
       <Button variant="default" type="submit">
-        Create Item
+        Create Post
       </Button>
     </form>
   );

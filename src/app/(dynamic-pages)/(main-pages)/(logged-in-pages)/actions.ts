@@ -10,10 +10,7 @@ import {
 } from '@/utils/supabase-queries';
 import { revalidatePath } from 'next/cache';
 
-export async function insertOrganizationAction(payload: {
-  name: string;
-  description: string;
-}) {
+export async function insertOrganizationAction(payload: { name: string }) {
   const supabaseClient = createSupabaseServerActionClient();
   const data = await insertOrganization(supabaseClient, payload);
   revalidatePath('/');

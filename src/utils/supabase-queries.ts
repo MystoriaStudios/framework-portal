@@ -1,10 +1,10 @@
 import { AppSupabaseClient, AuthProvider, Table } from '@/types';
 import { toSiteURL } from './helpers';
 
-export const getAllItems = async (
+export const getAllPosts = async (
   supabase: AppSupabaseClient
-): Promise<Array<Table<'items'>>> => {
-  const { data, error } = await supabase.from('items').select('*');
+): Promise<Array<Table<'posts'>>> => {
+  const { data, error } = await supabase.from('posts').select('*');
 
   if (error) {
     throw error;
@@ -13,13 +13,13 @@ export const getAllItems = async (
   return data;
 };
 
-export const insertItem = async (
+export const insertPost = async (
   supabase: AppSupabaseClient,
-  item: { name: string; description: string }
-): Promise<Table<'items'>> => {
+  post: { title: string; content: string }
+): Promise<Table<'posts'>> => {
   const { data, error } = await supabase
-    .from('items')
-    .insert(item)
+    .from('posts')
+    .insert(post)
     .select('*')
     .single();
 
@@ -30,11 +30,11 @@ export const insertItem = async (
   return data;
 };
 
-export const updateItem = async (
+export const updatePost = async (
   supabase: AppSupabaseClient,
-  item: { id: string; name: string; description: string }
+  post: { id: number; title: string; content: string }
 ) => {
-  const { data, error } = await supabase.from('items').update(item).single();
+  const { data, error } = await supabase.from('posts').update(post).single();
 
   if (error) {
     throw error;
@@ -43,8 +43,8 @@ export const updateItem = async (
   return data;
 };
 
-export const deleteItem = async (supabase: AppSupabaseClient, id: string) => {
-  const { error } = await supabase.from('items').delete().match({ id });
+export const deletePost = async (supabase: AppSupabaseClient, id: number) => {
+  const { error } = await supabase.from('posts').delete().match({ id });
 
   if (error) {
     throw error;
@@ -53,12 +53,12 @@ export const deleteItem = async (supabase: AppSupabaseClient, id: string) => {
   return true;
 };
 
-export const getItem = async (
+export const getPost = async (
   supabase: AppSupabaseClient,
-  id: string
-): Promise<Table<'items'>> => {
+  id: number
+): Promise<Table<'posts'>> => {
   const { data, error } = await supabase
-    .from('items')
+    .from('posts')
     .select('*')
     .eq('id', id)
     .single();
@@ -72,11 +72,11 @@ export const getItem = async (
 
 export const insertOrganization = async (
   supabase: AppSupabaseClient,
-  item: { name: string }
+  post: { name: string }
 ): Promise<Table<'organizations'>> => {
   const { data, error } = await supabase
     .from('organizations')
-    .insert(item)
+    .insert(post)
     .select('*')
     .single();
 
@@ -89,11 +89,11 @@ export const insertOrganization = async (
 
 export const updateOrganization = async (
   supabase: AppSupabaseClient,
-  item: { id: string; name: string }
+  post: { id: string; name: string }
 ) => {
   const { data, error } = await supabase
     .from('organizations')
-    .update(item)
+    .update(post)
     .single();
 
   if (error) {

@@ -1,8 +1,8 @@
 import { ClientPage } from './ClientPage';
-import { insertItemAction } from '../actions';
+import { insertPostAction } from '../actions';
 
 export const dynamic = 'force-dynamic';
 
-export default async function NewItem() {
-  return <ClientPage insertItemAction={insertItemAction} />;
+export default async function NewPost() {
+  return <ClientPage insertPostAction={insertPostAction} />;
 }

@@ -9,50 +9,61 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
-      items: {
-        Row: {
-          created_at: string
-          description: string
-          id: string
-          name: string
-        }
-        Insert: {
-          created_at?: string
-          description: string
-          id?: string
-          name: string
-        }
-        Update: {
-          created_at?: string
-          description?: string
-          id?: string
-          name?: string
-        }
-        Relationships: []
-      }
       organizations: {
         Row: {
           created_at: string
-          director: string
-          id: number
+          director: string | null
+          id: string
           members: Json | null
           name: string | null
         }
         Insert: {
           created_at?: string
-          director?: string
-          id?: number
+          director?: string | null
+          id?: string
           members?: Json | null
           name?: string | null
         }
         Update: {
           created_at?: string
-          director?: string
-          id?: number
+          director?: string | null
+          id?: string
           members?: Json | null
           name?: string | null
         }
         Relationships: []
+      }
+      posts: {
+        Row: {
+          author: string | null
+          content: string | null
+          created_at: string
+          id: number
+          title: string | null
+        }
+        Insert: {
+          author?: string | null
+          content?: string | null
+          created_at?: string
+          id?: number
+          title?: string | null
+        }
+        Update: {
+          author?: string | null
+          content?: string | null
+          created_at?: string
+          id?: number
+          title?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "posts_author_fkey"
+            columns: ["author"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
       }
     }
     Views: {
