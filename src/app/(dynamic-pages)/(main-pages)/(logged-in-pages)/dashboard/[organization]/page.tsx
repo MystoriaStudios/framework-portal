@@ -12,21 +12,29 @@ export default function Dashboard() {
             <H4 className="mx-4">Player Info</H4>
             <div className="grid grid-cols-2 gap-4 my-auto mt-2">
               <div className="bg-rose-800 p-2 text-white text-center font-extrabold rounded-lg">
-                <span className="text-xs tracking-widest uppercase">Current</span>
+                <span className="text-xs tracking-widest uppercase">
+                  Current
+                </span>
                 <H1>65</H1>
               </div>
 
               <div className="bg-amber-500 p-2 text-white text-center font-extrabold rounded-lg">
-                <span className="text-xs tracking-widest uppercase">Todays Peek</span>
+                <span className="text-xs tracking-widest uppercase">
+                  Todays Peek
+                </span>
                 <H1>200</H1>
               </div>
               <div className="bg-amber-500 p-2 text-white text-center font-extrabold rounded-lg">
-                <span className="text-xs tracking-widest uppercase">Average Session</span>
+                <span className="text-xs tracking-widest uppercase">
+                  Average Session
+                </span>
                 <H1>1h45m</H1>
               </div>
 
               <div className="bg-rose-800 p-2 text-white text-center font-extrabold rounded-lg">
-                <span className="text-xs tracking-widest uppercase">All time peek</span>
+                <span className="text-xs tracking-widest uppercase">
+                  All time peek
+                </span>
                 <H1>5832</H1>
               </div>
             </div>

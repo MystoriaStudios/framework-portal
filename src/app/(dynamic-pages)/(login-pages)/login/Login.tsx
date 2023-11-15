@@ -15,6 +15,7 @@ export function Login() {
     router.refresh();
     router.push('/auth/callback');
   }
+
   const passwordMutation = useSignInWithPassword({
     onSuccess: redirectToDashboard,
   });

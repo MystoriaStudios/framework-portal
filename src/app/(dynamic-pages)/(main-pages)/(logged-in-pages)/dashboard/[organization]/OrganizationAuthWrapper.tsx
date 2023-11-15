@@ -3,7 +3,7 @@ import { notFound, useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { getOrganization } from '@/utils/supabase-queries';
 import Link from 'next/link';
-import {supabaseUserClientComponentClient} from "@/supabase-clients/supabaseUserClientComponentClient";
+import { supabaseUserClientComponentClient } from '@/supabase-clients/supabaseUserClientComponentClient';
 
 export default function OrganizationAuthWrapper({ id, children }) {
   const params = useParams();
