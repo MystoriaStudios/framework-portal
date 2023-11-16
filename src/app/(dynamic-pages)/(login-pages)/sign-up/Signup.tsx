@@ -46,7 +46,7 @@ export function SignUp() {
             </p>
           </div>
           <RenderProviders
-            providers={['google', 'github', 'twitter']}
+            providers={['google', 'github', 'discord']}
             isLoading={providerMutation.isLoading}
             onProviderLoginRequested={(provider) => {
               providerMutation.mutate({
