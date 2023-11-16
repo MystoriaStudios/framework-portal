@@ -27,7 +27,7 @@ export default function OrganizationAuthWrapper({ id, children }) {
   useMotionValueEvent(scrollY, 'change', (latest) => {
     const previous = scrollY.getPrevious();
 
-    if (latest > previous && latest > 150) {
+    if (latest > previous && latest > 50) {
       setHidden(true);
       setShowNav(false);
       setDynClass('dark:bg-neutral-900/95 shadow top-[4.8em] rounded-t-none');
@@ -70,7 +70,7 @@ export default function OrganizationAuthWrapper({ id, children }) {
             transition: { delay: 0, duration: 0.3 },
           },
           showNav: {
-            height: 200,
+            height: 280,
             borderRadius: 22,
             alignItems: 'start',
             transition: { delay: 0 },

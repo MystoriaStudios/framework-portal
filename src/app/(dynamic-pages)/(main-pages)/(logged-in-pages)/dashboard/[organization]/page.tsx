@@ -6,8 +6,8 @@ import { H1 } from '@/components/ui/Typography/H1';
 export default function Dashboard() {
   return (
     <>
-      <div className="w-3/4 mx-auto pb-8">
-        <div className="grid grid-cols-6 lg:grid-cols-12 gap-4 mt-12">
+      <div className="w-3/4 mx-auto pb-8 mt-12">
+        <div className="grid grid-cols-6 lg:grid-cols-12 gap-4 mt-8">
           <div className="col-span-12 lg:col-span-4 p-2 bg-neutral-100 dark:bg-neutral-900 shadow rounded-2xl">
             <H4 className="mx-4">Player Info</H4>
             <div className="grid grid-cols-2 gap-4 my-auto mt-2">
@@ -73,7 +73,7 @@ export default function Dashboard() {
             />
           </div>
           <div className="col-span-12 lg:col-span-9 p-2 bg-neutral-100 dark:bg-neutral-900 shadow rounded-2xl">
-            <H4 className="mx-4">Historical Players</H4>
+            <H4 className="mx-4">Historical Player Peaks</H4>
             <LineChart
               data={{
                 labels: [

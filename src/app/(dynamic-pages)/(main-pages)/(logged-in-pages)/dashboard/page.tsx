@@ -29,7 +29,7 @@ export default function Dashboard() {
       <H1 className={'xl:mx-20 xl:mb-8 xl:mt-12'}>Choose a dashboard</H1>
       <div
         className={
-          'xl:m-20 border-neutral-300 dark:border-neutral-900 rounded-lg border-2 border-dashed'
+          'xl:mx-20 mt-4 border-neutral-300 dark:border-neutral-900 rounded-lg border-2 border-dashed'
         }
       >
         {organizations && organizations.length > 0 ? (
@@ -38,7 +38,7 @@ export default function Dashboard() {
               <Link
                 key={organization.id}
                 href={`/dashboard/${organization.id}`}
-                className="m-4 border-rose-800 odd:border-amber-500 border-2 rounded-2xl p-3"
+                className="m-4 odd:border-rose-800 border-amber-500 border-2 rounded-2xl p-3"
               >
                 <H4>{organization.name}</H4>
                 <hr />
