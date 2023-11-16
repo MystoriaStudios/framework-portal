@@ -133,14 +133,16 @@ export default function OrganizationAuthWrapper({ id, children }) {
               name: 'Billing',
               href: `billing`,
             },
+            {
+              name: 'Settings',
+              href: `settings`,
+            },
           ].map((link) => (
             <li key={link.name}>
               <Link
                 /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
                 // @ts-ignore
-                className={
-                  'transition-all transition duration-200 delay-50 flex mx-auto hover:border-b-4 border-rose-800'
-                }
+                className={`krypton transition-all duration-200 delay-100 flex mx-auto hover:border-b-4 border-rose-800`}
                 href={`/dashboard/${organization.id}/${link.href}`}
               >
                 {link.name}
