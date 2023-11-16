@@ -46,7 +46,7 @@ export default function OrganizationAuthWrapper({ id, children }) {
     fetch();
   });
 
-  if (organization == undefined) {
+  if (organization == null) {
     return 'Loading organization data.';
   }
 
@@ -138,8 +138,10 @@ export default function OrganizationAuthWrapper({ id, children }) {
               <Link
                 /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
                 // @ts-ignore
+                className={
+                  'transition-all transition duration-200 delay-50 flex mx-auto hover:border-b-4 border-rose-800'
+                }
                 href={`/dashboard/${organization.id}/${link.href}`}
-                className={'flex mx-auto'}
               >
                 {link.name}
               </Link>
